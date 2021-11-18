@@ -1,0 +1,19 @@
+#header{
+    background-color: black;
+    padding: 10%;
+    margin-top: 0;
+}
+
+body{
+    margin: 0 ;
+    font-family: 'Cormorant Infant', serif;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: grey;
+  padding: 5%;
+}
