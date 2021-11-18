@@ -12,8 +12,56 @@ body{
 .footer{
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 0%;
   width: 100%;
   background-color: grey;
   padding: 5%;
 }
+
+img{
+    width: 100%;
+    margin-top: -10%;
+    border-color: black;
+}
+
+.button1 {
+    background-color: #505050; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    height: 45px;
+    width: 96px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50%;
+    margin-top: -1.5%;
+  }
+  .button2 {
+    background-color: #505050; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    height: 45px;
+    width: 96px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-;
+    font-size: 50%;
+  }
+  .button3 {
+    background-color: #505050; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    height: 45px;
+    width: 96px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50%;
+  }
+
+  button:hover{
+    background-color:rgb(97, 97, 97) ;
+  }
