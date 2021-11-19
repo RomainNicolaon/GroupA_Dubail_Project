@@ -1,19 +1,82 @@
-#header{
-    background-color: black;
-    padding: 10%;
-    margin-top: 0;
+header{
+  background-color: black;
+  color:white;
+  text-align: center;
+  height: 100px;
+  
 }
 
 body{
-    margin: 0 ;
+    margin: auto ;
+    padding: auto;
     font-family: 'Cormorant Infant', serif;
 }
 
 .footer{
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 0%;
   width: 100%;
   background-color: grey;
   padding: 5%;
+}
+
+img{
+    width: 100%;
+    border-color: black;
+}
+
+.menu{
+  flex: 1;
+  text-align: center;
+}
+ .menubutton {
+   display: inline-block;
+   background-color: rgb(119, 119, 119);
+   padding: 5% ;
+   text-decoration: none;
+   color: aliceblue;
+   font-size: 50%;
+ }
+
+ .menubutton:hover{
+   background-color: rgb(161, 161, 161);
+ }
+
+ .metal{
+    text-align: center;
+    flex:1;
+ }
+
+ .metalbutton{
+   text-decoration: none;
+   display:inline-table;
+   background-color: rgb(223, 223, 217);
+   border-radius: 10%;
+   display: block;
+   width: 25%;
+   padding: 5%;
+   margin-top: 1%;
+ }
+
+ .metalbutton3{
+  text-decoration: none;
+  display:inline-table;
+  display: block;
+  width: 25%;
+  border-radius: 10%;
+  background-color: rgb(223, 223, 217);
+  padding: 5% ;
+  margin-top: 1%;
+  margin-left: 45%;
+  margin-bottom: 30%;
+}
+.metalbutton4{
+  text-decoration: none;
+  display:inline-table;
+  display: block;
+  width: 25%;
+  border-radius: 10%;
+  background-color: rgb(223, 223, 217);
+  padding: 5% ;
 }
