@@ -8,75 +8,77 @@ header{
 
 body{
     margin: auto ;
-    padding: auto;
     font-family: 'Cormorant Infant', serif;
+    height: 100%;
+    width: 100%;
 }
 
-.footer{
-  position: fixed;
-  left: 0;
-  bottom: 0%;
-  width: 100%;
-  background-color: grey;
-  padding: 5%;
-}
 
 img{
     width: 100%;
     border-color: black;
 }
 
-.menu{
-  flex: 1;
-  text-align: center;
-}
+ .menu{
+  display: flex;
+} 
+
  .menubutton {
-   display: inline-block;
    background-color: rgb(119, 119, 119);
-   padding: 5% ;
-   text-decoration: none;
+   padding: 4% ;
+   font-size: 73%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
    color: aliceblue;
-   font-size: 50%;
- }
-
- .menubutton:hover{
-   background-color: rgb(161, 161, 161);
- }
-
- .metal{
-    text-align: center;
-    flex:1;
- }
-
- .metalbutton{
    text-decoration: none;
-   display:inline-table;
-   background-color: rgb(223, 223, 217);
-   border-radius: 10%;
-   display: block;
-   width: 25%;
-   padding: 5%;
-   margin-top: 1%;
+   border: aliceblue solid 1px;
+   
  }
 
- .metalbutton3{
-  text-decoration: none;
-  display:inline-table;
-  display: block;
-  width: 25%;
-  border-radius: 10%;
-  background-color: rgb(223, 223, 217);
-  padding: 5% ;
-  margin-top: 1%;
-  margin-left: 45%;
-  margin-bottom: 30%;
+.menubutton:active{
+  background-color: rgb(161, 161, 161);
+  color: aliceblue;
 }
-.metalbutton4{
-  text-decoration: none;
-  display:inline-table;
-  display: block;
-  width: 25%;
-  border-radius: 10%;
+
+
+.btn-choice{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 2%;
+  justify-content: center;
+}
+
+.box{
   background-color: rgb(223, 223, 217);
-  padding: 5% ;
+  width: 40%;
+  height: 100px;
+  padding: 1%;
+  margin: 2%;
+  border-radius: 10%;
+  font-size: 110%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.imgMetal{
+  height: 35%;
+  max-height: 100%;
+  width: auto;
+}
+
+.btn-container{
+  width: 100%;
+}
+
+
+.imgStone{
+  height: 80%;
+  max-height: 100%;
+  width: auto;
 }
