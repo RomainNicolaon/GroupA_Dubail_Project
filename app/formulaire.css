@@ -4,7 +4,7 @@
     margin-top: 0;
 }
 
-p{
+form {
     margin-left: 4%;
 }
 
@@ -14,6 +14,7 @@ body{
     zoom:235%;
     margin-top: 15%;
     margin:auto;
+    background-color: whitesmoke;
 }
 
 .footer{
@@ -67,10 +68,13 @@ textarea {
 } 
 .footer{
 position: absolute;
-position:fixed;
 left: 0;
-bottom: 0%;
+bottom: -115%;
 width: 100%;
 background-color: grey;
 padding: 1%;
+}
+
+div { 
+    text-align: right;
 }
