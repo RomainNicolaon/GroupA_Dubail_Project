@@ -4,10 +4,6 @@
     margin-top: 0;
 }
 
-form {
-    margin-left: 4%;
-}
-
 body{
     margin: 0 ;
     font-family: 'Cormorant Infant', serif;
@@ -15,6 +11,7 @@ body{
     margin-top: 15%;
     margin:auto;
     background-color: whitesmoke;
+    text-align: center;
 }
 
 .footer{
@@ -66,15 +63,61 @@ textarea {
     border: 1px solid #fff;      
     border-radius: 4px;           
 } 
-.footer{
-position: absolute;
-left: 0;
-bottom: -115%;
-width: 100%;
-background-color: grey;
-padding: 1%;
-}
 
 div { 
     text-align: right;
+}
+
+p {
+    text-align: left;
+    margin-left: 4%;
+}
+
+.footer{
+    position: fixed;
+    font-family: 'Cormorant Infant', serif;
+    bottom: 0%;
+    width: 100%;
+    background-color: black;
+    height: 5%;
+    color:white; 
+    display: flex;
+    } 
+
+    nav>div:last-child{
+    border:none;
+}
+
+nav>a:hover{
+    color:white;
+} 
+
+a:hover{
+    color:black;
+}
+
+.border{
+    height: 100%;
+}
+
+nav>div:last-child{
+    border:none;
+}
+
+nav>a:hover{
+    color:white;
+} 
+
+nav.container{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+a{
+    text-decoration:none;
+    }
+
+nav>div>a{        
+    color:white;
 }
