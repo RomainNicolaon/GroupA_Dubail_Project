@@ -8,47 +8,42 @@ header{
 
 body{
     margin: auto ;
-    padding: auto;
     font-family: 'Cormorant Infant', serif;
+    height: 100%;
+    width: 100%;
 }
 
-.footer{
-  position: fixed;
-  left: 0;
-  bottom: 0%;
-  width: 100%;
-  background-color: grey;
-  padding: 5%;
-}
 
 img{
     width: 100%;
     border-color: black;
 }
 
-.menu{
-  flex: 1;
-  text-align: center;
+ .menu{
   display: flex;
-  justify-content: space-between;
-  background-color: rgb(119, 119, 119);
-}
+} 
+
  .menubutton {
-   display: flex;
    background-color: rgb(119, 119, 119);
-   padding: 5% ;
-   text-decoration: none;
-   color: aliceblue;
+   padding: 4% ;
    font-size: 73%;
+   display: flex;
    align-items: center;
-
+   justify-content: center;
+   text-align: center;
+   color: aliceblue;
+   text-decoration: none;
+   border: aliceblue solid 1px;
+   
  }
 
- .menubutton:hover{
-   background-color: rgb(161, 161, 161);
- }
+.menubutton:active{
+  background-color: rgb(161, 161, 161);
+  color: aliceblue;
+}
 
-.container{
+
+.btn-choice{
   width: 80%;
   display: flex;
   flex-wrap: wrap;
@@ -77,3 +72,13 @@ img{
   width: auto;
 }
 
+.btn-container{
+  width: 100%;
+}
+
+
+.imgStone{
+  height: 80%;
+  max-height: 100%;
+  width: auto;
+}
