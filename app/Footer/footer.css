@@ -1,0 +1,25 @@
+nav.container{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+nav>a{
+    color:white;
+}
+.footer{
+    position: fixed;
+    font-family: 'Cormorant Infant', serif;
+    bottom: 0%;
+    width: 100%;
+    background-color: black;
+    height: 5%;
+    color:white; 
+    display: flex;
+    } 
+    nav>a:hover{
+        color :white;
+    }
+    a{
+        text-decoration: none;
+    }

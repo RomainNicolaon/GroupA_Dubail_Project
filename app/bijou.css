@@ -1,16 +1,3 @@
-header{
-    background-color: black;
-    text-align: center;
-    height: 100px;
-}
-nav.container{
-    display: flex;
-    justify-content: space-between;
-
-}
-nav>div>a{
-    color:white;
-}
 
 a{
     text-decoration: none;
@@ -19,26 +6,12 @@ a{
 p{
     text-align: center;
     font-family: 'Cormorant Infant', serif;
-}
-
-.footer{
-    position: fixed;
-    font-family: 'Cormorant Infant', serif;
-    bottom: 0%;
-    width: 100%;
-    background-color: black;
-    height: 5%;
-    color:white; 
-    display: flex;
-    } 
-  
+} 
   body{
     padding: auto;
     margin: auto;   
-    background-color: whitesmoke;
+    background: linear-gradient(lightgrey, rgb(250, 250, 250));
   } 
-         
-
 h2{
     text-align: center;
     font-family: 'Cormorant Infant', serif;
@@ -51,15 +24,9 @@ img{
     border:solid whitesmoke;
     background-color: white;
 }
-nav>div:last-child{
-    border:none;
-}
-nav>a:hover{
-    color:white;
-} 
 a:hover{
     color:black;
 }
-.border{
-    height: 100%;
+.container{
+    margin-top: 75px;
 }
