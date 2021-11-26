@@ -32,51 +32,5 @@ header{
 body{
     margin:auto;
     padding: auto;
+    background: linear-gradient(lightgrey, #fff);
 } 
-
-.footer{
-    position: fixed;
-    font-family: 'Cormorant Infant', serif;
-    bottom: 0%;
-    width: 100%;
-    background-color: black;
-    height: 5%;
-    color:white; 
-    display: flex;
-    } 
-nav>div:last-child{
-    border:none;
-}
-nav>a:hover{
-    color:white;
-} 
-a:hover{
-    color:black;
-}
-.border{
-    height: 100%;
-}
-nav>div:last-child{
-    border:none;
-}
-nav>a:hover{
-    color:white;
-} 
-a:hover{
-    color:black;
-}
-.border{
-    height: 100%;
-}
-
-nav.container{
-    display: flex;
-    justify-content: space-between;
-
-}
-nav>div>a{
-    color:white;
-}
-a{
-    text-decoration: none;
-}
