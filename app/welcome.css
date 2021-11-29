@@ -7,6 +7,12 @@
 
 body {
     background-color: whitesmoke;
+	-webkit-animation-name :FADE;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-name: FADE;
+	-moz-animation-duration: 2s;
+	background: linear-gradient(lightgrey, #fff);
 }
 
 .container{
@@ -45,12 +51,3 @@ html,body{
 
 	}
 }
-body{
-	-webkit-animation-name:FADE;
-	-webkit-animation-duration:2s;
-	-webkit-animation-iteration-count:1;
-	-moz-animation-name: FADE;
-	-moz-animation-duration: 2s;
-}
-                     
-
