@@ -14,8 +14,9 @@ import { CustomStoneComponent } from './custom-stone/custom-stone.component';
 
 const routes: Routes = [
   { path: 'bijoux', component: BijouxComponent },
-  { path: '', component:OuvertureComponent},
-  {path:'welcome', redirectTo: ''}
+  { path: '', component:OuvertureComponent },
+  { path:'custom-metal', component: CustomMetalComponent },
+  { path:'custom-engrave', component: CustomEngraveComponent }
 ];
 
 @NgModule({
