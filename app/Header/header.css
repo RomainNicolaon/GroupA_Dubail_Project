@@ -10,4 +10,7 @@ body{
     margin: auto;   
     background: linear-gradient(lightgrey, rgb(250, 250, 250));
   } 
+  .cls-1 {
+    fill: #fff;
+}
   
