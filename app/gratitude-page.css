@@ -17,7 +17,8 @@ p {
     margin-top: 25%;
     zoom: 175%;
     font-family: 'Quicksand', sans-serif;
-        }
+}
+
 #button:hover {
     background-color: lightslategray;
 }
@@ -34,3 +35,5 @@ body{
     padding: auto;
     background: linear-gradient(lightgrey, #fff);
 } 
+
+/* Color gradient for the page */
