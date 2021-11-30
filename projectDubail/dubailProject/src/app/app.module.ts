@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -13,9 +13,11 @@ import { CustomMetalComponent } from './custom-metal/custom-metal.component';
 import { CustomStoneComponent } from './custom-stone/custom-stone.component';
 
 const routes: Routes = [
-  { path: 'bijoux', component: BijouxComponent },
   { path: '', component:OuvertureComponent},
-  {path:'welcome', redirectTo: ''}
+  {path:'welcome', redirectTo: ''},
+  { path: 'bijoux', component: BijouxComponent },
+  {path:'customEngravement', component: CustomEngraveComponent},
+  {path: 'customMetal', component: CustomMetalComponent}
 ];
 
 @NgModule({
@@ -36,7 +38,7 @@ const routes: Routes = [
     
 
   ],
-  providers: [],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
