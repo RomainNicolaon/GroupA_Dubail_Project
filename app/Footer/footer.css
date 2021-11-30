@@ -1,3 +1,10 @@
+a{
+        text-decoration: none;
+    }
+ nav>a:hover{
+        color :white;
+    }
+    
 nav.container{
     display: flex;
     justify-content: space-between;
@@ -17,9 +24,4 @@ nav>a{
     color:white; 
     display: flex;
     } 
-    nav>a:hover{
-        color :white;
-    }
-    a{
-        text-decoration: none;
-    }
+   
