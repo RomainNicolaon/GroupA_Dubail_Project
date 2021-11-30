@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: middle;
+    max-width: 100%;
+    height: auto;
+    height: 100%;
+    max-height: 80%;
+    align-content: center;
+}
+
+svg {
+    max-height: 100%;
+}
+
+html,body{
+    height: 100%;
+}
+
+@-moz-keyframes FADE{
+	0%{ 
+	opacity: 0;
+	}
+	100% { 
+	opacity: 1;
+	}
+}
+@-webkit-keyframes FADE{
+	0%{ 
+	opacity: 0;
+	}
+	100% { 
+	opacity: 1;
+
+	}
+}

@@ -1,0 +1,8 @@
+/* margin:auto && padding:auto pour le placement du header */
+body{ 
+    padding: auto;
+    margin: auto;   
+    background: linear-gradient(lightgrey, rgb(250, 250, 250));
+    margin: 0;
+    padding: 0;
+} 

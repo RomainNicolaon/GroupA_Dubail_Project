@@ -1,14 +1,12 @@
-/* lien en noir et non-souligné */
+
 a{
     text-decoration: none;
     color:black;
 }
-/* écriture sous les images centrer */
 p{
     text-align: center;
     font-family: 'Cormorant Infant', serif;
 } 
-/* background en dégradé de toute la page */
   body{
     padding: auto;
     margin: auto;   
@@ -20,6 +18,7 @@ p{
     animation-fill-mode: forwards; /* Fade in animation */
     }
 
+      
     @keyframes fadeInAnimation {
         0% {
             opacity: 0;
@@ -35,18 +34,17 @@ h2{
     text-align: center;
     font-family: 'Cormorant Infant', serif;
 }
-/* taille des images */
 img{
     max-width: 100%;
     max-height: 100%;
 }
-/* border,background des images et css de bootstrap*/
 .col-xs-3{
     border:solid whitesmoke;
     background-color: white;
 }
-
-/* definition de la marge du container */
+a:hover{
+    color:black;
+}
 .container{
     margin-top: 75px;
 }
