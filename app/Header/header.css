@@ -1,10 +1,10 @@
-/* background du haut en noir et dubail centrer */
+/* background at the top and center the svg of dubail*/
 header{
     background-color: black;
     text-align: center;
     height: 100px;
 }
-/* margin:auto && padding:auto pour le placement du header */
+/* margin:auto && padding:auto to place the header */
 body{ 
     padding: auto;
     margin: auto;   
