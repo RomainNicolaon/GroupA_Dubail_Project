@@ -1,18 +1,11 @@
-/* header{
-    background-color: white;
-    color:white;
-    text-align: center;
-    height: 100px;
-} */
-
 body {
-    background-color: whitesmoke;
+    background-color: whitesmoke; 
 	-webkit-animation-name :FADE;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
+	-webkit-animation-duration: 2s; /* adjust the duration of the fade */
+	-webkit-animation-iteration-count: 1; /*adjust the iteration of the fade */
 	-moz-animation-name: FADE;
-	-moz-animation-duration: 2s;
-	background: linear-gradient(lightgrey, #fff);
+	-moz-animation-duration: 2s; /* Add 2sec fade in on the page */
+	background: linear-gradient(lightgrey, #fff); 
 }
 
 .container{
@@ -23,11 +16,11 @@ body {
     height: auto;
     height: 100%;
     max-height: 80%;
-    align-content: center;
+    align-content: center; /* display container for the svg */
 }
 
 svg {
-    max-height: 100%;
+    max-height: 100%; /* adjust the height of the svg */
 }
 
 html,body{
@@ -40,7 +33,7 @@ html,body{
 	}
 	100% { 
 	opacity: 1;
-	}
+	} 
 }
 @-webkit-keyframes FADE{
 	0%{ 
@@ -50,4 +43,4 @@ html,body{
 	opacity: 1;
 
 	}
-}
+} /* Adjust the fade of the container */
