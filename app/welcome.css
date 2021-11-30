@@ -12,12 +12,12 @@ body {
 .container{
     display: flex;
     justify-content: center;
-    align-items: middle; /* align the svg to the middle */
+    align-items: middle; /* align the svg to the middle of the page */
     max-width: 100%;
     height: auto;
     height: 100%;
     max-height: 80%;
-    align-content: center;
+    align-content: center; /* align the content to the center of the page */
 /* set settings of the svg container */
 }
 
