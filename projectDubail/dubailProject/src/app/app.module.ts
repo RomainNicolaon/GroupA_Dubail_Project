@@ -11,6 +11,7 @@ import { ThanksComponent } from './thanks/thanks.component';
 import { CustomEngraveComponent } from './custom-engrave/custom-engrave.component';
 import { CustomMetalComponent } from './custom-metal/custom-metal.component';
 import { CustomStoneComponent } from './custom-stone/custom-stone.component';
+import { FormulaireComponent } from './formulaire/formulaire.component';
 
 const routes: Routes = [
   { path: '', component:OuvertureComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'customEngravement', component: CustomEngraveComponent},
   { path: 'customMetal', component: CustomMetalComponent},
   { path: 'customStone', component: CustomStoneComponent},
-  { path: 'thanks', component: ThanksComponent}
+  { path: 'thanks', component: ThanksComponent},
+  { path: 'formulaire', component: FormulaireComponent}
 ];
 
 @NgModule({
@@ -32,7 +34,8 @@ const routes: Routes = [
     ThanksComponent,
     CustomEngraveComponent,
     CustomMetalComponent,
-    CustomStoneComponent
+    CustomStoneComponent,
+    FormulaireComponent
   ],
   imports: [
     BrowserModule,
