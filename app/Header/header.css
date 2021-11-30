@@ -1,4 +1,3 @@
-/* background du haut en noir et dubail centrer */
 header{
     background-color: black;
     text-align: center;
@@ -10,7 +9,4 @@ body{
     margin: auto;   
     background: linear-gradient(lightgrey, rgb(250, 250, 250));
   } 
-  .cls-1 {
-    fill: #fff;
-}
   

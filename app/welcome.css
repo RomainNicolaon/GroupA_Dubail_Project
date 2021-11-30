@@ -1,8 +1,14 @@
 body {
     background-color: whitesmoke;
+<<<<<<< HEAD
 	-webkit-animation-name:FADE;
 	-webkit-animation-duration:2s; /* set duration of the fade */
 	-webkit-animation-iteration-count:1; /* set de iteration */
+=======
+	-webkit-animation-name :FADE;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+>>>>>>> parent of 4f70e9f (Merge branch 'test' of https://github.com/LavaL18/GroupA_Dubail_Project into test)
 	-moz-animation-name: FADE;
 	-moz-animation-duration: 2s; /* set duration of the animation */
 	background: linear-gradient(lightgrey, #fff);
