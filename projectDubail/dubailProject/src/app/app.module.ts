@@ -14,10 +14,12 @@ import { CustomStoneComponent } from './custom-stone/custom-stone.component';
 
 const routes: Routes = [
   { path: '', component:OuvertureComponent},
-  {path:'welcome', redirectTo: ''},
+  { path: 'welcome', redirectTo: ''},
   { path: 'bijoux', component: BijouxComponent },
-  {path:'customEngravement', component: CustomEngraveComponent},
-  {path: 'customMetal', component: CustomMetalComponent}
+  { path: 'customEngravement', component: CustomEngraveComponent},
+  { path: 'customMetal', component: CustomMetalComponent},
+  { path: 'customStone', component: CustomStoneComponent},
+  { path: 'thanks', component: ThanksComponent}
 ];
 
 @NgModule({
