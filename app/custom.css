@@ -13,14 +13,6 @@ img{
     border-color: black;
 }
 
-a:visited{
-  color: rgb(185, 185, 185);
-}
-
-.btn-container{
-  width: 100%;
-}
-
  .menu{
   display: flex;
 } 
@@ -75,7 +67,9 @@ a:visited{
     background-color: rgb(190, 190, 190);
     color: aliceblue;
 }
-
+a:visited{
+  color: rgb(185, 185, 185);
+}
 
 
 .imgMetal{
@@ -89,7 +83,9 @@ a:visited{
   max-height: 100%;
   width: auto;
 }
-
+.btn-container{
+  width: 100%;
+}
 
 .engraving-container{
   display: flex;

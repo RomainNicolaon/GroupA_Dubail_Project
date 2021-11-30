@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
@@ -25,14 +25,10 @@ html, body {
     </style>
   </head>
   <body>
-    <button onclick="changeTexture()">Modifier la texture</button>
-    <button onclick="changeModel()">Modifier le bijou</button>
-    <input type="text" id="send">
-    <button onclick="changeText()">Modifier le texte</button>
-    <div id="final"></div>
+    <button onclick="changeTexture()">Change Texture</button>
+    <button onclick="changeModel()">Change Jewel</button>
     <canvas id="c">
     </canvas>
-    <script src="script.js"></script>
   </body>
   <script type="module">
 // Three.js - Load .GLTF - Rotate jewel
@@ -128,7 +124,7 @@ function main() {
   let jewel;
   {
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load('scene2.gltf', (gltf) => {
+    gltfLoader.load('scene.gltf', (gltf) => {
       const root = gltf.scene;
       scene.add(root);
       jewel = root.getObjectByName('jewel');
