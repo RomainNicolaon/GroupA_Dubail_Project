@@ -14,9 +14,9 @@ import { CustomStoneComponent } from './custom-stone/custom-stone.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 
 const routes: Routes = [
-  { path: '', component:OuvertureComponent},
+  { path: '', component:BijouxComponent},
   { path: 'welcome', redirectTo: ''},
-  { path: 'bijoux', component: BijouxComponent },
+  { path: 'bijoux', redirectTo: '' },
   { path: 'customEngravement', component: CustomEngraveComponent},
   { path: 'customMetal', component: CustomMetalComponent},
   { path: 'customStone', component: CustomStoneComponent},
