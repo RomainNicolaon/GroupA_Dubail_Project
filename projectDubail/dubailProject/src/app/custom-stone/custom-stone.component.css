@@ -99,3 +99,15 @@ img {
     bottom: 0;
     width: 100%;
   }
+
+  @media (min-aspect-ratio: 363/724) {
+    .box{
+      height: 80px;
+    }
+  }
+
+  @media (min-aspect-ratio: 363/684) {
+    .box{
+      height: 60px;
+    }
+  }
