@@ -9,6 +9,7 @@ img {
   
   .btn-container {
     width: 100%;
+    font-size: 150%;
   }
   
   .menu {
@@ -92,4 +93,9 @@ img {
     margin-top: 5%;
     border-radius: 10%;
   }
-  
+
+  #botom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }

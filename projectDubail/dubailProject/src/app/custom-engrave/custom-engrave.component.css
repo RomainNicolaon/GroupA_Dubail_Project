@@ -9,6 +9,7 @@ a:visited {
 
 .btn-container {
   width: 100%;
+  font-size: 150%;
 }
 
 .menu {
@@ -91,4 +92,10 @@ a:visited {
 .confirm-btn {
   margin-top: 5%;
   border-radius: 10%;
+}
+
+#botom{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
