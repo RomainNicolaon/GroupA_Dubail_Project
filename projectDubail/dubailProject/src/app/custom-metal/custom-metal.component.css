@@ -1,0 +1,113 @@
+img {
+    width: 100%;
+    border-color: black;
+  }
+  
+  a:visited {
+    color: rgb(185, 185, 185);
+  }
+  
+  .btn-container {
+    width: 100%;
+    font-size: 150%;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menubutton {
+    background-color: rgb(119, 119, 119);
+    padding: 4%;
+    font-size: 73%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: aliceblue;
+    text-decoration: none;
+    border: aliceblue solid 1px;
+  
+  }
+  
+  .menubutton:active {
+    background-color: rgb(161, 161, 161);
+    color: aliceblue;
+  }
+  
+  
+  .btn-choice {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 2%;
+    justify-content: center;
+  }
+  
+  .box {
+    background-color: rgb(223, 223, 217);
+    width: 40%;
+    height: 100px;
+    padding: 1%;
+    margin: 2%;
+    border-radius: 10%;
+    font-size: 110%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgb(185, 185, 185);
+  }
+  
+  .box:active {
+  
+    background-color: rgb(190, 190, 190);
+    color: aliceblue;
+  }
+  
+  
+  
+  .imgMetal {
+    height: 35%;
+    max-height: 100%;
+    width: auto;
+  }
+  
+  .imgStone {
+    height: 70%;
+    max-height: 100%;
+    width: auto;
+  }
+  
+  
+  .engraving-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+  }
+  
+  .confirm-btn {
+    margin-top: 5%;
+    border-radius: 10%;
+  }
+
+  #botom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  @media (min-aspect-ratio: 363/724) {
+    .box{
+      height: 80px;
+    }
+  }
+
+  @media (min-aspect-ratio: 363/684) {
+    .box{
+      height: 60px;
+    }
+  }

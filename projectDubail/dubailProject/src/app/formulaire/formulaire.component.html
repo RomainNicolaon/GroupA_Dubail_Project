@@ -1,0 +1,47 @@
+<div>
+    <p><span style="color: red;">*</span> Champs Requis</p>
+    <form action="#contact" method="post" id="form">
+        <div class="case">
+            <label for='name'>Nom</label><span style="color: red;">*</span><br />
+            <input type="text" size="27" maxlength="50" id="surname" required placeholder="Gaël" />
+        </div>
+        <div class="case">
+            <label for='prenom'>Prénom</label><span style="color: red;">*</span><br />
+            <input type="text" size="27" maxlength="50" id="first_name" required placeholder="Lebrun" /><br />
+        </div>
+        <div class="case">
+            <label for='mail'>Mail</label><span style="color: red;">*</span><br />
+            <input type="text" size="27" id="e-mail" required placeholder="gaël.lebrun@exemple.com" /><br />
+        </div>
+        <div class="case">
+            <label for='phone'>Téléphone</label><span style="color: red;">*</span><br />
+            <input type="tel" size="21" id="phone" onkeypress="return event.charCode >= 40 &&  event.charCode <= 57"
+                required /><br />
+        </div>
+        <div class="case">
+            <label>Ajouter un message </label><br />
+            <textarea cols="31" rows="5" type="text" id="message"></textarea><br />
+        </div>
+        <div>
+            <input type="checkbox" id="GRPD">
+            <label for="GRPD">Accepter les <a href="">Termes et Conditions</a></label>
+        </div>
+        <div class="case">
+            <button class="btn" id="Recommencer" href="bijou.html">Recommencer</button>
+            <button class="btn" id="Envoyer"
+                href="mailto:antopillet18@gmail.com? subject=Commande n°000001Dubail&body=Bonjour,  %0D%0A%0D%0ACi-joint le récapitulatif de votre  commande:">Envoyer</button>
+        </div>
+    </form>
+</div>
+<script>
+    var input = document.querySelector("#phone");
+    intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "us";
+                success(countryCode);
+            });
+        },
+    });
+</script>
