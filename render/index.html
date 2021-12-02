@@ -56,7 +56,8 @@ function main() {
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('white');
-{
+{ // this part originaly for display texture
+  /*
     const planeSize = 0;
 
     const loader = new THREE.TextureLoader();
@@ -74,7 +75,7 @@ function main() {
     });
     const mesh = new THREE.Mesh(planeGeo, planeMat);
     mesh.rotation.x = Math.PI * -40;
-    scene.add(mesh);
+    scene.add(mesh);*/
   }
   
   {
@@ -123,10 +124,23 @@ function main() {
 
   let jewel;
   {
+    // update: add texture display on gltf model
+    // ==> start
+    const textureLoader= new THREE.TextureLoader();
+    const texture = textureLoader.load('Textures/Gold.png');
+    texture.flipY = false;
     const gltfLoader = new GLTFLoader();
     gltfLoader.load('scene.gltf', (gltf) => {
       const root = gltf.scene;
       scene.add(root);
+      const model = gltf.scene;
+      model.traverse((o) =>{
+        if (o.isMesh){
+          o.material.map = texture;
+        }
+      });
+      scene.add(model);
+      // end <==
       jewel = root.getObjectByName('jewel');
 
       // compute the box that contains all the stuff
