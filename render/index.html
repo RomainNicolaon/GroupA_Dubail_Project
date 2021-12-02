@@ -128,7 +128,16 @@ function main() {
     // ==> start
     const textureLoader= new THREE.TextureLoader();
     const texture = textureLoader.load('Textures/Gold.png');
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    // If texture is used for color information, set colorspace.
+    texture.encoding = THREE.sRGBEncoding;
+
+    // UVs use the convention that (0, 0) corresponds to the upper left corner of a texture.
     texture.flipY = false;
+    
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.magFilter = THREE.NearestFilter;
     const gltfLoader = new GLTFLoader();
     gltfLoader.load('scene.gltf', (gltf) => {
       const root = gltf.scene;
