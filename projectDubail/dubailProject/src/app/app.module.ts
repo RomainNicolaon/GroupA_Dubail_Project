@@ -12,6 +12,7 @@ import { CustomEngraveComponent } from './custom-engrave/custom-engrave.componen
 import { CustomMetalComponent } from './custom-metal/custom-metal.component';
 import { CustomStoneComponent } from './custom-stone/custom-stone.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
+import { CubeComponent } from './cube/cube.component';
 
 const routes: Routes = [
   { path: '', component:BijouxComponent},
@@ -35,7 +36,8 @@ const routes: Routes = [
     CustomEngraveComponent,
     CustomMetalComponent,
     CustomStoneComponent,
-    FormulaireComponent
+    FormulaireComponent,
+    CubeComponent
   ],
   imports: [
     BrowserModule,
