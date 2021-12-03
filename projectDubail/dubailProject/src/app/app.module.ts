@@ -8,21 +8,27 @@ import { HeaderComponent } from './home-component/header/header.component';
 import { BijouxComponent } from './bijoux/bijoux.component';
 import { OuvertureComponent } from './ouverture/ouverture.component';
 import { ThanksComponent } from './thanks/thanks.component';
-import { CustomEngraveComponent } from './custom-engrave/custom-engrave.component';
-import { CustomMetalComponent } from './custom-metal/custom-metal.component';
-import { CustomStoneComponent } from './custom-stone/custom-stone.component';
+import { CustomMetalComponent } from './custom/custom-metal/custom-metal.component';
+import { CustomStoneComponent } from './custom/custom-stone/custom-stone.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { CubeComponent } from './cube/cube.component';
+import { CustomComponent } from './custom/custom.component';
+import { CustomEngraveComponent } from './custom/custom-engrave/custom-engrave.component';
 
 const routes: Routes = [
-  { path: '', component:BijouxComponent},
-  { path: 'welcome', redirectTo: ''},
+  { path: '', component: BijouxComponent },
+  { path: 'welcome', redirectTo: '' },
   { path: 'bijoux', redirectTo: '' },
-  { path: 'customEngravement', component: CustomEngraveComponent},
-  { path: 'customMetal', component: CustomMetalComponent},
-  { path: 'customStone', component: CustomStoneComponent},
-  { path: 'thanks', component: ThanksComponent},
-  { path: 'formulaire', component: FormulaireComponent}
+  { path: 'thanks', component: ThanksComponent },
+  { path: 'formulaire', component: FormulaireComponent },
+  {
+    path: 'custom', component: CustomComponent,
+    children: [
+      { path: 'engrave', component: CustomEngraveComponent },
+      { path: 'stone', component: CustomStoneComponent },
+      { path: 'metal', component: CustomMetalComponent }
+    ]
+  }
 ];
 
 @NgModule({
@@ -37,12 +43,13 @@ const routes: Routes = [
     CustomMetalComponent,
     CustomStoneComponent,
     FormulaireComponent,
-    CubeComponent
+    CubeComponent,
+    CustomComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes) //enable those routes in module,
-    
+
 
   ],
   providers: [Title],

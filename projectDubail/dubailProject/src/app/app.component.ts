@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, Routes } from '@angular/router';
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as THREE from 'three';
 import { OrbitControls } from '@three-ts/orbit-controls';

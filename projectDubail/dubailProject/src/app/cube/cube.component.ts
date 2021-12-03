@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, ElementRef, Input, ViewChild } from '@angular/core';
 import * as THREE from "three";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 
 @Component({
@@ -79,7 +80,6 @@ export class CubeComponent implements OnInit, AfterViewInit {
     }());
     
     let controls = new OrbitControls(this.camera, this.renderer.domElement);
-    controls.enableZoom = true;
     controls.update()
   }
   
