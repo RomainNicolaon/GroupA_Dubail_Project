@@ -48,13 +48,20 @@ export class CubeComponent implements OnInit, AfterViewInit {
 
     this.material.flipY = false
     let ring = gltf.scene
+    let children = new Array();  //Array for the meshes  
     ring.traverse( (node) => {
 
       if (node instanceof THREE.Mesh) {
-        node.material.map = this.material
+        children.push(node)
       }
 
     });
+    
+    children[0].material.map = this.material // First part of "love"
+    children[1].material.map = this.material // Gemstone
+    children[2].material.map = this.material // Second part of "love"
+    children[3].material.map = this.material // Ring
+    children[4].material.map = this.material // Gemstone's support
     this.scene.add(ring);
     this.scene.add(this.camera)
   }
