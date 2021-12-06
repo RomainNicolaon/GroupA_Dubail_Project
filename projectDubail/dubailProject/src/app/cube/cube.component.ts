@@ -37,11 +37,17 @@ export class CubeComponent implements OnInit, AfterViewInit {
 
   public textureToShow = 0;
 
-  public material = this.texLoader.load(`../../assets/texture/White_Gold.png`)
+  public material = this.texLoader.load(`../../assets/texture/Silver.png`)
 
   loader = new GLTFLoader().load('../../assets/scene/scene.gltf', (gltf) => {
-    let ring = gltf.scene
+    this.renderer.outputEncoding = THREE.sRGBEncoding;
+    this.material.encoding = THREE.sRGBEncoding;
+    const pointLight = new THREE.PointLight( 0xffffff );
+    pointLight.position.set(0,0,0);
+    this.camera.add(pointLight);
+
     this.material.flipY = false
+    let ring = gltf.scene
     ring.traverse( (node) => {
 
       if (node instanceof THREE.Mesh) {
@@ -50,6 +56,7 @@ export class CubeComponent implements OnInit, AfterViewInit {
 
     });
     this.scene.add(ring);
+    this.scene.add(this.camera)
   }
   );
 
@@ -98,6 +105,7 @@ export class CubeComponent implements OnInit, AfterViewInit {
 
   constructor() { }
   ngOnInit(): void {
+    
   }
 
   ngAfterViewInit() {
