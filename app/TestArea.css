@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(190, 190, 190);
+}
+
+.container{
+    min-height: 49vh;
+    margin-top: 15vh;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    border: black 1px solid;
+    position: relative;
+}
+
+#bracelet{
+    position: absolute;
+    background-color: black;
+    opacity: 0.4;
+    padding: 15%;
+    padding-top: 23%;
+    top: 15vh;
+    right: 1.5vh;
+}
+
+#boucle{
+    position: absolute;
+    background-color: black;
+    opacity: 0.3;
+    padding: 10%;
+    padding-top: 20%;
+    padding-right: 20%;
+    top:30vh ;
+    left: 18vh;
+}
+
+#bague{
+    position: absolute;
+    background-color: black;
+    padding: 15% ;
+    opacity: 0.6;
+    padding-right: 35%;
+    padding-top: 20%;
+    bottom: 36vh;
+    left: 6vh;
+}
+
+#collier{
+    position: absolute ;
+    background-color: black;
+    padding: 10%;
+    opacity: 0.6;
+    padding-left: 23%;
+    padding-bottom: 25%;
+    right: 0vh;
+    top: 40vh;
+}

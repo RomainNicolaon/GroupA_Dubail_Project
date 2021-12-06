@@ -35,7 +35,7 @@ export class CubeComponent implements OnInit, AfterViewInit {
   private texLoader = new THREE.TextureLoader();
 
   public texMetal = ['Silver.png', 'Gold.png', 'Rose_Gold.png', 'White_Gold.png'];
-  public texStone = ['Diamond.png', 'Emerald.png', 'Ruby.png', 'Sapphire.png'];
+  public texStone = ['Diamond.png', 'Emerald.jpg', 'Ruby.png', 'Sapphire.png'];
 
   public metalTextureToShow = 1;
   public stoneTextureToShow = 1;
@@ -60,11 +60,8 @@ export class CubeComponent implements OnInit, AfterViewInit {
 
     });
     this.children[1].material.map = this.stoneMaterial //Stone
-    this.children[3].material.map = this.metalMaterial //ring
-    this.children[4].material.map = this.metalMaterial //base
-
-    this.children[0].material.map = this.metalMaterial //tex1
-    this.children[2].material.map = this.metalMaterial //tex2
+    this.children[0].material.map = this.metalMaterial //ring
+    this.children[2].material.map = this.metalMaterial //base
 
 
     this.scene.add(this.ring);
@@ -115,10 +112,8 @@ export class CubeComponent implements OnInit, AfterViewInit {
     
     this.metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[this.metalTextureToShow]}`)
 
-    this.children[3].material.map = this.metalMaterial
-    this.children[4].material.map = this.metalMaterial
-    this.children[0].material.map = this.metalMaterial
-    this.children[2].material.map = this.metalMaterial
+    this.children[0].material.map = this.metalMaterial //ring
+    this.children[2].material.map = this.metalMaterial //base
   }
 
   stone(){
@@ -130,7 +125,7 @@ export class CubeComponent implements OnInit, AfterViewInit {
     }
     this.stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[this.stoneTextureToShow]}`)
 
-    this.children[1].material.map = this.stoneMaterial
+    this.children[1].material.map = this.stoneMaterial //Stone
   }
 
   constructor() { }
