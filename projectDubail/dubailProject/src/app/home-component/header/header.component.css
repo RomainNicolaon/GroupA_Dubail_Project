@@ -124,8 +124,8 @@ body {
    */
   #menu {
     position: absolute;
-    width: 300px;
-    margin: -100px 0 0 -50px;
+    width: 85%;
+    margin: -35px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
     padding-bottom: 100%;
