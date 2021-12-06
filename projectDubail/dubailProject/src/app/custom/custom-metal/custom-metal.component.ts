@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-custom-metal',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomMetalComponent implements OnInit {
 
-  constructor() { }
+  public index = 0
+  constructor(    
+    private dataService: DataService    
+  ) { }    
+    
+  ngOnInit() {    
+  }    
 
-  ngOnInit(): void {
+  click(index:number){
+    this.dataService.onMetalClick(index);
   }
 
 }

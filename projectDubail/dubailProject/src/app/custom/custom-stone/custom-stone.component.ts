@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../data.service';
 
 @Component({
   selector: 'app-custom-stone',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomStoneComponent implements OnInit {
 
-  constructor() { }
+  public index = 0
+  constructor(    
+    private dataService: DataService    
+  ) { }    
+    
+  ngOnInit() {    
+  }    
 
-  ngOnInit(): void {
+  click(index:number){
+    this.dataService.onStoneClick(index);
   }
 
 }

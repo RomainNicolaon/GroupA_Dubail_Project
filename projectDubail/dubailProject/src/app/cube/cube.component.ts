@@ -2,6 +2,9 @@ import { Component, OnInit, AfterViewInit, ElementRef, Input, ViewChild } from '
 import * as THREE from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three-orbitcontrols-ts';
+import { DataService } from '../data.service';
+import { __await } from 'tslib';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-cube',
@@ -37,22 +40,19 @@ export class CubeComponent implements OnInit, AfterViewInit {
   public texMetal = ['Silver.png', 'Gold.png', 'Rose_Gold.png', 'White_Gold.png'];
   public texStone = ['Diamond.png', 'Emerald.jpg', 'Ruby.png', 'Sapphire.png'];
 
-  public metalTextureToShow = 1;
-  public stoneTextureToShow = 1;
-
-  public metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[this.metalTextureToShow]}`)
-  public stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[this.stoneTextureToShow]}`)
+  public metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[1]}`)
+  public stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[2]}`)
 
   loader = new GLTFLoader().load('../../assets/scene/scene.gltf', (gltf) => {
     this.renderer.outputEncoding = THREE.sRGBEncoding;
     this.metalMaterial.encoding = THREE.sRGBEncoding;
-    const pointLight = new THREE.PointLight( 0xffffff );
-    pointLight.position.set(0,0,0);
+    const pointLight = new THREE.PointLight(0xffffff);
+    pointLight.position.set(0, 0, 0);
     this.camera.add(pointLight);
 
     this.metalMaterial.flipY = false
     this.ring = gltf.scene
-    this.ring.traverse( (node) => {
+    this.ring.traverse((node) => {
 
       if (node instanceof THREE.Mesh) {
         this.children.push(node)
@@ -102,35 +102,34 @@ export class CubeComponent implements OnInit, AfterViewInit {
     controls.update()
   }
 
-  metal() {
-    if (this.metalTextureToShow == 3) {
-      this.metalTextureToShow = 0;
-    }
-    else {
-      this.metalTextureToShow += 1;
-    }
-    
-    this.metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[this.metalTextureToShow]}`)
-
+  metal(index: number) {
+    this.metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[index]}`)
     this.children[0].material.map = this.metalMaterial //ring
     this.children[2].material.map = this.metalMaterial //base
   }
 
-  stone(){
-    if (this.stoneTextureToShow == 3) {
-      this.stoneTextureToShow = 0;
-    }
-    else {
-      this.stoneTextureToShow += 1;
-    }
-    this.stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[this.stoneTextureToShow]}`)
-
-    this.children[1].material.map = this.stoneMaterial //Stone
+  stone(index: number) {
+    this.stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[index]}`)
+    this.children[1].material.map = this.stoneMaterial
   }
 
-  constructor() { }
-  ngOnInit(): void {
-    
+  constructor(    
+    private dataService: DataService  
+  ) { }
+
+  ngOnInit() {
+    if (this.dataService.subsVarStone==undefined) {    
+      this.dataService.subsVarStone = this.dataService.    
+      invokeStoneFunction.subscribe((indexStone:number) => {    
+        this.stone(indexStone);    
+      });    
+    }
+    if (this.dataService.subsVarMetal==undefined) {    
+      this.dataService.subsVarMetal = this.dataService.    
+      invokeMetalFunction.subscribe((indexMetal:number) => {    
+        this.metal(indexMetal);    
+      });    
+    }
   }
 
   ngAfterViewInit() {
