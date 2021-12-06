@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit, ElementRef, Input, ViewChild } from '
 import * as THREE from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three-orbitcontrols-ts';
-import { Material } from 'three';
 
 @Component({
   selector: 'app-cube',
@@ -27,35 +26,48 @@ export class CubeComponent implements OnInit, AfterViewInit {
   public renderer!: THREE.WebGLRenderer;
 
   tex: THREE.Texture | null | undefined;
+  private ring!: THREE.Group
+  private children = new Array()
 
   private get canvas(): HTMLCanvasElement {
     return this.canvasRef?.nativeElement
   }
   private texLoader = new THREE.TextureLoader();
 
-  public arr = ['texture.jpg', 'kube.jpg'];
+  public texMetal = ['Silver.png', 'Gold.png', 'Rose_Gold.png', 'White_Gold.png'];
+  public texStone = ['Diamond.png', 'Emerald.png', 'Ruby.png', 'Sapphire.png'];
 
-  public textureToShow = 0;
+  public metalTextureToShow = 1;
+  public stoneTextureToShow = 1;
 
-  public material = this.texLoader.load(`../../assets/texture/Silver.png`)
+  public metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[this.metalTextureToShow]}`)
+  public stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[this.stoneTextureToShow]}`)
 
   loader = new GLTFLoader().load('../../assets/scene/scene.gltf', (gltf) => {
     this.renderer.outputEncoding = THREE.sRGBEncoding;
-    this.material.encoding = THREE.sRGBEncoding;
+    this.metalMaterial.encoding = THREE.sRGBEncoding;
     const pointLight = new THREE.PointLight( 0xffffff );
     pointLight.position.set(0,0,0);
     this.camera.add(pointLight);
 
-    this.material.flipY = false
-    let ring = gltf.scene
-    ring.traverse( (node) => {
+    this.metalMaterial.flipY = false
+    this.ring = gltf.scene
+    this.ring.traverse( (node) => {
 
       if (node instanceof THREE.Mesh) {
-        node.material.map = this.material
+        this.children.push(node)
       }
 
     });
-    this.scene.add(ring);
+    this.children[1].material.map = this.stoneMaterial //Stone
+    this.children[3].material.map = this.metalMaterial //ring
+    this.children[4].material.map = this.metalMaterial //base
+
+    this.children[0].material.map = this.metalMaterial //tex1
+    this.children[2].material.map = this.metalMaterial //tex2
+
+
+    this.scene.add(this.ring);
     this.scene.add(this.camera)
   }
   );
@@ -93,14 +105,32 @@ export class CubeComponent implements OnInit, AfterViewInit {
     controls.update()
   }
 
-  click() {
-    // if (this.textureToShow == 1) {
-    //   this.textureToShow = 0;
-    // }
-    // else {
-    //   this.textureToShow += 1;
-    // }
-    // this.material.map = this.texLoader.load(`../../assets/texture/${this.arr[this.textureToShow]}`);
+  metal() {
+    if (this.metalTextureToShow == 3) {
+      this.metalTextureToShow = 0;
+    }
+    else {
+      this.metalTextureToShow += 1;
+    }
+    
+    this.metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[this.metalTextureToShow]}`)
+
+    this.children[3].material.map = this.metalMaterial
+    this.children[4].material.map = this.metalMaterial
+    this.children[0].material.map = this.metalMaterial
+    this.children[2].material.map = this.metalMaterial
+  }
+
+  stone(){
+    if (this.stoneTextureToShow == 3) {
+      this.stoneTextureToShow = 0;
+    }
+    else {
+      this.stoneTextureToShow += 1;
+    }
+    this.stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[this.stoneTextureToShow]}`)
+
+    this.children[1].material.map = this.stoneMaterial
   }
 
   constructor() { }
