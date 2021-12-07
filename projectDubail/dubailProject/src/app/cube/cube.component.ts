@@ -69,7 +69,7 @@ export class CubeComponent implements OnInit, AfterViewInit {
   }
   );
 
-  private createScene() {
+  private createScene() { /**/
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x9b9b9b)
 
@@ -80,14 +80,15 @@ export class CubeComponent implements OnInit, AfterViewInit {
       this.nearClippingPlane,
       this.farClippingPlane
     )
+
     this.camera.position.z = this.cameraZ;
   }
 
-  private getAspectRatio() {
+  private getAspectRatio() { /**/
     return this.canvas.clientWidth / this.canvas.clientHeight;
   }
 
-  private startRenderingLoop() {
+  private startRenderingLoop() { /* ! */
     this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
     this.renderer.setPixelRatio(devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
@@ -102,37 +103,40 @@ export class CubeComponent implements OnInit, AfterViewInit {
     controls.update()
   }
 
-  metal(index: number) {
+  metal(index: number) { /**/
+    this.metalMaterial.needsUpdate = true;
     this.metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[index]}`)
     this.children[0].material.map = this.metalMaterial //ring
     this.children[2].material.map = this.metalMaterial //base
   }
 
-  stone(index: number) {
+  stone(index: number) { /**/
+    this.stoneMaterial.needsUpdate = true;
     this.stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[index]}`)
     this.children[1].material.map = this.stoneMaterial
   }
 
-  constructor(    
-    private dataService: DataService  
+  constructor( /**/
+    private dataService: DataService
   ) { }
 
-  ngOnInit() {
-    if (this.dataService.subsVarStone==undefined) {    
-      this.dataService.subsVarStone = this.dataService.    
-      invokeStoneFunction.subscribe((indexStone:number) => {    
-        this.stone(indexStone);    
-      });    
+  ngOnInit() { /**/
+    if (this.dataService.subsVarStone == undefined) {
+      this.dataService.subsVarStone = this.dataService.
+        invokeStoneFunction.subscribe((indexStone: number) => {
+          this.stone(indexStone);
+        });
     }
-    if (this.dataService.subsVarMetal==undefined) {    
-      this.dataService.subsVarMetal = this.dataService.    
-      invokeMetalFunction.subscribe((indexMetal:number) => {    
-        this.metal(indexMetal);    
-      });    
+    if (this.dataService.subsVarMetal == undefined) {
+      this.dataService.subsVarMetal = this.dataService.
+        invokeMetalFunction.subscribe((indexMetal: number) => {
+          this.metal(indexMetal);
+        });
     }
   }
 
-  ngAfterViewInit() {
+
+  ngAfterViewInit() { /**/
     this.createScene();
     this.startRenderingLoop();
   }

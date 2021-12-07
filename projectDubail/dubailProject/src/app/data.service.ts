@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Observable, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
 import { __await } from 'tslib';
 
 @Injectable({
@@ -10,7 +10,7 @@ export class DataService {
   invokeStoneFunction = new EventEmitter();    
   subsVarStone!: Subscription;    
     
-  onStoneClick(index:number) {    
+  onStoneClick(index:number) {   
     this.invokeStoneFunction.emit(index);    
   }
 
@@ -21,5 +21,7 @@ export class DataService {
     this.invokeMetalFunction.emit(index);    
   }
 
-  constructor() { }   
+  reload$(){
+    setTimeout(() => {window.location.reload()}, 10)
+  }
 }
