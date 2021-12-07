@@ -71,7 +71,7 @@
   }
 
 .containerText{
-  padding-top: 25%;
+  padding-top: 5%;
   height: 100vh;
 }
 
@@ -208,10 +208,8 @@
   }
   
   .box{
-    transform: translate(-50%,-50%);
-    top: 47%;
-    left: 53%;
-    position: absolute;
+    left: 45%;
+    position: relative;
 
 }
 
