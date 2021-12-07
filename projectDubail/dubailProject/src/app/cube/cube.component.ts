@@ -43,7 +43,7 @@ export class CubeComponent implements OnInit, AfterViewInit {
   public metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[1]}`)
   public stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[2]}`)
 
-  loader = new GLTFLoader().load('../../assets/scene/scene.gltf', (gltf) => {
+  loader = new GLTFLoader().load('../../assets/scene/ring/scene.gltf', (gltf) => {
     this.renderer.outputEncoding = THREE.sRGBEncoding;
     this.metalMaterial.encoding = THREE.sRGBEncoding;
     const pointLight = new THREE.PointLight(0xffffff);
