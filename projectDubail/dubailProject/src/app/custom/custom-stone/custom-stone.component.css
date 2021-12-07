@@ -3,13 +3,14 @@ img {
     border-color: black;
   }
   
-  a:visited {
+  /* a:visited {
     color: rgb(185, 185, 185);
   }
-  
+   */
   .btn-container {
     width: 100%;
     font-size: 150%;
+    margin-top: -7px;
   }
   
   .menu {
@@ -31,7 +32,7 @@ img {
   
   }
   
-  .menubutton:active {
+  .menubutton:focus {
     background-color: rgb(161, 161, 161);
     color: aliceblue;
   }
@@ -59,10 +60,10 @@ img {
     align-items: center;
     flex-direction: column;
     text-decoration: none;
-    color: rgb(185, 185, 185);
+    color: black;
   }
   
-  .box:active {
+  .box:focus {
   
     background-color: rgb(190, 190, 190);
     color: aliceblue;
@@ -77,7 +78,7 @@ img {
   }
   
   .imgStone {
-    height: 70%;
+    height: 80%;
     max-height: 100%;
     width: auto;
   }
@@ -100,7 +101,10 @@ img {
     bottom: 0;
     width: 100%;
   }
-
+  .box> span{
+    margin-bottom: -10px;
+    margin-top: 10%;
+  }
   @media (min-aspect-ratio: 363/724) {
     .box{
       height: 80px;

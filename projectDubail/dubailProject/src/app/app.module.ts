@@ -14,6 +14,7 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
 import { CubeComponent } from './cube/cube.component';
 import { CustomComponent } from './custom/custom.component';
 import { CustomEngraveComponent } from './custom/custom-engrave/custom-engrave.component';
+import { DataService } from './data.service';
 
 const routes: Routes = [
   { path: '', component: BijouxComponent },
@@ -52,7 +53,7 @@ const routes: Routes = [
 
 
   ],
-  providers: [Title],
+  providers: [Title, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

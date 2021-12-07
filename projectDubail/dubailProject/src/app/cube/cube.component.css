@@ -1,4 +1,13 @@
 #canvas{
-    height: 50%;
+    height: 45%;
     width: 100%;
+}
+.img360{
+    width: 10%;
+    position: absolute;
+}
+.imgTS{
+    width: 15%;
+    position: absolute;
+    right: 0%;
 }

@@ -2,7 +2,9 @@ import { Component, OnInit, AfterViewInit, ElementRef, Input, ViewChild } from '
 import * as THREE from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three-orbitcontrols-ts';
-import { Material } from 'three';
+import { DataService } from '../data.service';
+import { __await } from 'tslib';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-cube',
@@ -27,47 +29,62 @@ export class CubeComponent implements OnInit, AfterViewInit {
   public renderer!: THREE.WebGLRenderer;
 
   tex: THREE.Texture | null | undefined;
+  private ring!: THREE.Group
+  private children = new Array()
 
   private get canvas(): HTMLCanvasElement {
     return this.canvasRef?.nativeElement
   }
   private texLoader = new THREE.TextureLoader();
 
-  public arr = ['texture.jpg', 'kube.jpg'];
+  public texMetal = ['Silver.png', 'Gold.png', 'Rose_Gold.png', 'White_Gold.png'];
+  public texStone = ['Diamond.png', 'Emerald.jpg', 'Ruby.png', 'Sapphire.png'];
 
-  public textureToShow = 0;
+  public metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[1]}`)
+  public stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[2]}`)
 
-  public material = this.texLoader.load(`../../assets/texture/Silver.png`)
+  public metalMaterialParam = new MeshStandardMaterial({
+    metalness:1,
+    roughness:0.3
+  })
+  public stoneMaterialParam = new MeshStandardMaterial({
+    metalness:1,
+    transparent:true,
+    opacity:0.9,
+    roughness:0.3
+  })
 
-  loader = new GLTFLoader().load('../../assets/scene/scene.gltf', (gltf) => {
+  loader = new GLTFLoader().load('../../assets/scene/ring/scene.gltf', (gltf) => {
     this.renderer.outputEncoding = THREE.sRGBEncoding;
-    this.material.encoding = THREE.sRGBEncoding;
-    const pointLight = new THREE.PointLight( 0xffffff );
-    pointLight.position.set(0,0,0);
+    this.metalMaterial.encoding = THREE.sRGBEncoding;
+    const pointLight = new THREE.PointLight(0xffffff);
+    pointLight.position.set(0, 0, 0);
     this.camera.add(pointLight);
 
-    this.material.flipY = false
-    let ring = gltf.scene
-    let children = new Array();  //Array for the meshes  
-    ring.traverse( (node) => {
+    this.metalMaterial.flipY = false
+    this.ring = gltf.scene
+    this.ring.traverse((node) => {
 
       if (node instanceof THREE.Mesh) {
-        children.push(node)
+        this.children.push(node)
       }
 
     });
-    
-    children[0].material.map = this.material // First part of "love"
-    children[1].material.map = this.material // Gemstone
-    children[2].material.map = this.material // Second part of "love"
-    children[3].material.map = this.material // Ring
-    children[4].material.map = this.material // Gemstone's support
-    this.scene.add(ring);
+    for (let i = 0; i<this.children.length;i++){ //For the ring 
+      if(i==1){                                 // Needs to be changed per model
+        this.children[i].material.map=this.stoneMaterial;
+        this.children[i].material=this.stoneMaterialParam ;
+        continue;
+      }
+  this.children[i].material.map=this.metalMaterial;
+  this.children[i].material=this.metalMaterialParam ;
+    }
+    this.scene.add(this.ring);
     this.scene.add(this.camera)
   }
   );
 
-  private createScene() {
+  private createScene() { /**/
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x9b9b9b)
 
@@ -78,14 +95,15 @@ export class CubeComponent implements OnInit, AfterViewInit {
       this.nearClippingPlane,
       this.farClippingPlane
     )
+
     this.camera.position.z = this.cameraZ;
   }
 
-  private getAspectRatio() {
+  private getAspectRatio() { /**/
     return this.canvas.clientWidth / this.canvas.clientHeight;
   }
 
-  private startRenderingLoop() {
+  private startRenderingLoop() { /* ! */
     this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
     this.renderer.setPixelRatio(devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
@@ -100,22 +118,40 @@ export class CubeComponent implements OnInit, AfterViewInit {
     controls.update()
   }
 
-  click() {
-    // if (this.textureToShow == 1) {
-    //   this.textureToShow = 0;
-    // }
-    // else {
-    //   this.textureToShow += 1;
-    // }
-    // this.material.map = this.texLoader.load(`../../assets/texture/${this.arr[this.textureToShow]}`);
+  metal(index: number) { /**/
+    this.metalMaterial.needsUpdate = true;
+    this.metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[index]}`)
+    this.children[0].material.map = this.metalMaterial //ring
+    this.children[2].material.map = this.metalMaterial //base
   }
 
-  constructor() { }
-  ngOnInit(): void {
-    
+  stone(index: number) { /**/
+    this.stoneMaterial.needsUpdate = true;
+    this.stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[index]}`)
+    this.children[1].material.map = this.stoneMaterial
   }
 
-  ngAfterViewInit() {
+  constructor( /**/
+    private dataService: DataService
+  ) { }
+
+  ngOnInit() { /**/
+    if (this.dataService.subsVarStone == undefined) {
+      this.dataService.subsVarStone = this.dataService.
+        invokeStoneFunction.subscribe((indexStone: number) => {
+          this.stone(indexStone);
+        });
+    }
+    if (this.dataService.subsVarMetal == undefined) {
+      this.dataService.subsVarMetal = this.dataService.
+        invokeMetalFunction.subscribe((indexMetal: number) => {
+          this.metal(indexMetal);
+        });
+    }
+  }
+
+
+  ngAfterViewInit() { /**/
     this.createScene();
     this.startRenderingLoop();
   }
