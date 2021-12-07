@@ -43,6 +43,17 @@ export class CubeComponent implements OnInit, AfterViewInit {
   public metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[1]}`)
   public stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[2]}`)
 
+  public metalMaterialParam = new MeshStandardMaterial({
+    metalness:1,
+    roughness:0.3
+  })
+  public stoneMaterialParam = new MeshStandardMaterial({
+    metalness:1,
+    transparent:true,
+    opacity:0.9,
+    roughness:0.3
+  })
+
   loader = new GLTFLoader().load('../../assets/scene/ring/scene.gltf', (gltf) => {
     this.renderer.outputEncoding = THREE.sRGBEncoding;
     this.metalMaterial.encoding = THREE.sRGBEncoding;
@@ -59,11 +70,15 @@ export class CubeComponent implements OnInit, AfterViewInit {
       }
 
     });
-    this.children[1].material.map = this.stoneMaterial //Stone
-    this.children[0].material.map = this.metalMaterial //ring
-    this.children[2].material.map = this.metalMaterial //base
-
-
+    for (let i = 0; i<this.children.length;i++){ //For the ring 
+      if(i==1){                                 // Needs to be changed per model
+        this.children[i].material.map=this.stoneMaterial;
+        this.children[i].material=this.stoneMaterialParam ;
+        continue;
+      }
+  this.children[i].material.map=this.metalMaterial;
+  this.children[i].material=this.metalMaterialParam ;
+    }
     this.scene.add(this.ring);
     this.scene.add(this.camera)
   }
