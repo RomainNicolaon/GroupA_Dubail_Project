@@ -1,32 +1,38 @@
 <app-header></app-header>
 <div class="col-md-12">
     <h2>Choisissez votre Bijou</h2>
+
+    <section class="carousel placement_carousel" aria-label="Gallery">
+        <ol class="carousel__viewport">
+            <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper">
+                    <a routerLink="../custom/metal"><button (click)="emptyCache()"></button><span>Bague</span></a>
+                </div>
+            </li>
+            <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper">
+                <a routerLink="../custom/metal"><button (click)="emptyCache()"></button><span>Collier</span></a>
+            </div>
+            </li>
+            <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper">
+                <a routerLink="../custom/metal"><button (click)="emptyCache()"></button><span>Bracelet</span></a>
+            </div>
+            </li>
+            <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper">
+                <a routerLink="../custom/metal"><button (click)="emptyCache()"></button><span>Boucles</span></a>
+            </div>
+            </li>
+        </ol>
+    </section>
     <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-6 col-xs-3"><a routerLink="../custom/metal"><button (click)="emptyCache()">
-                    <img src="assets/img/collier.jpg" alt="image du collier">
-                    <p class="collier1">Collier</p>
-                </button></a></div>
-            <div class="col-6 col-xs-3"><a routerLink="../custom/metal"><button (click)="emptyCache()">
-                    <img src="assets/img/bague.jpg" class="img-fluid" alt="image de la bague">
-                    <p class="bague1">Bague</p>
-                </button></a></div>
-            <div class="w-100">
-            </div>
-            <div class="col-6 col-xs-3">
-                <a routerLink="../custom/metal"><button (click)="emptyCache()">
-                    <img src="assets/img/bracelet.jpg" alt="image du bracelet">
-                    <p class="bracelet1">Bracelet</p>
-                </button></a>
-            </div>
-            <div class="col-6 col-xs-3">
-                <a routerLink="../custom/metal"><button (click)="emptyCache()">
-                    <img src="assets/img/boucle.jpg" alt="image de la boucle d'oreilles">
-                    <p>Boucle d'oreilles</p>
-                </button></a>
-            </div>
-        </div>
+    <img class="slideFinger" src="../../assets/img/finger.png" alt="">
+    <div class="containerText">
+
+        <H2 class="center">Faites défiler <br> pour selectionner votre bijoux</H2>
+
     </div>
+
 </div>
 <router-outlet></router-outlet>

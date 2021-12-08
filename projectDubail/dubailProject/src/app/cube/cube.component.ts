@@ -5,6 +5,7 @@ import { OrbitControls } from 'three-orbitcontrols-ts';
 import { DataService } from '../data.service';
 import { __await } from 'tslib';
 import { Observable, of } from 'rxjs';
+import { MeshStandardMaterial } from 'three';
 
 @Component({
   selector: 'app-cube',

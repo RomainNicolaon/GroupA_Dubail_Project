@@ -1,61 +1,287 @@
 
-a{
-  text-decoration: none;
-  color:black;
+a>span{
+  text-shadow: 0px 0px 30px rgb(0, 0, 0),0px 0px 30px rgb(0, 0, 0),0px 0px 30px rgb(0, 0, 0),0px 0px 10px black,0px 0px 10px black;
+  font-size: large;
 }
-p{
+h2{
   text-align: center;
   font-family: 'Cormorant Infant', serif;
+  text-align: center;
+  margin-top: 10%;
 } 
+button{
+  display: none;
+}
 body{
   padding: auto;
   margin: auto;   
   background: linear-gradient(lightgrey, rgb(250, 250, 250));
-
-  /* add fading when the page load */
-  animation: fadeInAnimation ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; /* Fade in animation */
+  }
+  @keyframes tonext {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: 100%;
+    }
+    98% {
+      left: 100%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+  
+  @keyframes tostart {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: -300%;
+    }
+    98% {
+      left: -300%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+  
+  @keyframes snap {
+    96% {
+      scroll-snap-align: center;
+    }
+    97% {
+      scroll-snap-align: none;
+    }
+    99% {
+      scroll-snap-align: none;
+    }
+    100% {
+      scroll-snap-align: center;
+    }
+  }
+  
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background:linear-gradient(lightgrey, rgb(250, 250, 250));
+    font-family: 'Cormorant Infant', serif;
   }
 
-    
-  @keyframes fadeInAnimation {
-      0% {
-          opacity: 0;
-      }
-      100% {
-          opacity: 1;
-       }
+
+  a{
+    text-decoration: none;
+    color: white;
+    font-size: 5vh;
+    text-shadow: 3px 0px black;
+    font-weight: bold;
+    text-align: center;
+    align-items: end;
+    display:grid;
+    height: 100%;
+    width: 100%;
+  }
+  .slideFinger{
+    width: 20%;
+    margin-left: 40%;
+    animation: Swipe 2s ease 0s infinite normal forwards;
+  }
+  @keyframes Swipe {
+    0% {
+      transform: translateX(50px);
+    }
+  
+    50% {
+      transform: translateX(-50px);
+    }
+    100%{
+      transform: translateX(50px);
+    }
+  }
+  .placement_carousel{
+    margin-top: 20%;
   }
 
-  
-/* texte du haut centrer et style d'écriture de dubail */
-h2{
-  text-align: center;
-  font-family: 'Cormorant Infant', serif;
-}
-img{
-  max-width: 100%;
-  max-height: 100%;
-}
-.col-xs-3{
-  border:solid whitesmoke;
-  background-color: white;
-}
-a:hover{
-  color:black;
-}
-.container{
-  margin-top: 25px;
-  
+.containerText{
+  padding-top: 5%;
 }
 
-button{
-  background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  .history{
+    display: flex;
+    justify-content: center;
+  }
+  
+  * {
+    box-sizing: border-box;
+    scrollbar-color: transparent transparent; /* thumb and track color */
+    scrollbar-width: 0px;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+  }
+  
+  * {
+    -ms-overflow-style: none;
+  }
+  
+  ol, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .carousel {
+    position: relative;
+    padding-top: 60%;
+    filter: drop-shadow(0 0 10px #0003);
+    perspective: 100px;
+  }
+  
+  .carousel__viewport {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    counter-reset: item;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .carousel__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    counter-increment: item;
+  }
+  
+  .carousel__slide:nth-child(1) {
+    background-image: url(../../assets/img/baguee.png);
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+  .carousel__slide:nth-child(2) {
+    background-image: url(../../assets/img/colliertorse.png);
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+  }
+  .carousel__slide:nth-child(3) {
+    background-image: url(../../assets/img/braceletpresentoire.png);
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+  }
+  .carousel__slide:nth-child(4) {
+    background-image: url(../../assets/img/bouclepresentoire.png);
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+  }
+  
+  .carousel__slide:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-40%,70px);
+    color: #fff;
+    font-size: 2em;
+  }
+  
+  .carousel__snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+  }
+
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (hover: hover) {
+    .carousel__snapper {
+      animation-name: tonext, snap;
+      animation-timing-function: ease;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+    }
+  
+    .carousel__slide:last-child .carousel__snapper {
+      animation-name: tostart, snap;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .carousel__snapper {
+      animation-name: none;
+    }
+  }
+  
+  .box{
+    left: 45%;
+    position: relative;
+
 }
+
+.box span{
+    display: inline-block;
+    width: 4vh;
+    height: 4vh;
+    border-bottom: 3px solid rgb(2, 2, 2);
+    border-right: 3px solid rgb(0, 0, 0);
+    transform: rotate(135deg);
+    margin: -0.2vh;
+    animation: animate 3s infinite;
+}
+
+.box span:nth-child(2){
+    animation-delay:-0.2s ;
+
+}
+.box span:nth-child(3){
+    animation-delay:-0.4s ;
+    transform: rotate(135deg);
+
+}
+
+
+
+
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: rotate(135deg) translate(-10px,-10px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(135deg) translate(10px,10px);
+    }
+}
+ 
