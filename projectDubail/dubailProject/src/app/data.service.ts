@@ -22,6 +22,6 @@ export class DataService {
   }
 
   reload$(){
-    setTimeout(() => {window.location.reload()}, 10)
+    setTimeout(() => {window.location.reload()}, 1)
   }
 }
