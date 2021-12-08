@@ -36,34 +36,47 @@ export class CubeComponent implements OnInit, AfterViewInit {
   private get canvas(): HTMLCanvasElement {
     return this.canvasRef?.nativeElement
   }
-  private texLoader = new THREE.TextureLoader();
 
-  public texMetal = ['Silver.png', 'Gold.png', 'Rose_Gold.png', 'White_Gold.png'];
-  public texStone = ['Diamond.png', 'Emerald.jpg', 'Ruby.png', 'Sapphire.png'];
+  public colorMetal:number[] = [0xb3b3b3 /*silver*/, 0xcba135/*gold*/, 0xee918d /*rose*/, 0xffffff/*white*/];
+  public colorStone = [0xE6E6FF/*Diamand*/, 0x01FF01/*emerald*/, 0xFF0101/*ruby*/, 0x0101FF/*sapphire*/];
 
-  public metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[1]}`)
-  public stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[2]}`)
 
   public metalMaterialParam = new MeshStandardMaterial({
-    metalness:1,
-    roughness:0.3
+    color: new THREE.Color(this.colorMetal[1]),
+    metalness: 0.95,
+    roughness: 0.4
+    
   })
   public stoneMaterialParam = new MeshStandardMaterial({
-    metalness:1,
-    transparent:true,
-    opacity:0.9,
-    roughness:0.3
+    color: new THREE.Color(this.colorStone[2]),
+    metalness: 1,
+    transparent: true,
+    opacity: 0.8,
+    roughness: 0.4,
+    
   })
 
   loader = new GLTFLoader().load('../../assets/scene/ring/scene.gltf', (gltf) => {
     this.renderer.outputEncoding = THREE.sRGBEncoding;
-    this.metalMaterial.encoding = THREE.sRGBEncoding;
-    const pointLight = new THREE.PointLight(0xffffff);
-    pointLight.position.set(0, 0, 0);
-    this.camera.add(pointLight);
 
-    this.metalMaterial.flipY = false
+    const pointLight = new THREE.PointLight(0xffffff);
+    pointLight.intensity = 0.3
+    pointLight.position.set(0, 0, 0);
+    const col = 0xffffff
+    const intes = 1.5
+    const Light1 = new THREE.SpotLight(col);
+    Light1.intensity = intes
+    Light1.position.set(0, -10000, 10000);
+    const Light2 = new THREE.SpotLight(col);
+    Light2.intensity = intes
+    Light2.position.set(0, -10000, -10000);
+    const Light3 = new THREE.SpotLight(col);
+    Light3.intensity = intes
+    Light3.position.set(0, 10000, 0);
+
     this.ring = gltf.scene
+    this.camera.add(pointLight);
+    this.ring.add(Light1, Light2, Light3);
     this.ring.traverse((node) => {
 
       if (node instanceof THREE.Mesh) {
@@ -71,14 +84,12 @@ export class CubeComponent implements OnInit, AfterViewInit {
       }
 
     });
-    for (let i = 0; i<this.children.length;i++){ //For the ring 
-      if(i==1){                                 // Needs to be changed per model
-        this.children[i].material.map=this.stoneMaterial;
-        this.children[i].material=this.stoneMaterialParam ;
+    for (let i = 0; i < this.children.length; i++) { //For the ring 
+      if (i == 1) {                                 // Needs to be changed per model
+        this.children[i].material = this.stoneMaterialParam;
         continue;
       }
-  this.children[i].material.map=this.metalMaterial;
-  this.children[i].material=this.metalMaterialParam ;
+      this.children[i].material = this.metalMaterialParam;
     }
     this.scene.add(this.ring);
     this.scene.add(this.camera)
@@ -119,17 +130,12 @@ export class CubeComponent implements OnInit, AfterViewInit {
     controls.update()
   }
 
-  metal(index: number) { /**/
-    this.metalMaterial.needsUpdate = true;
-    this.metalMaterial = this.texLoader.load(`../../assets/texture/${this.texMetal[index]}`)
-    this.children[0].material.map = this.metalMaterial //ring
-    this.children[2].material.map = this.metalMaterial //base
+  metal(index: number) {
+    this.metalMaterialParam.color = new THREE.Color(this.colorMetal[index])
   }
 
   stone(index: number) { /**/
-    this.stoneMaterial.needsUpdate = true;
-    this.stoneMaterial = this.texLoader.load(`../../assets/texture/${this.texStone[index]}`)
-    this.children[1].material.map = this.stoneMaterial
+    this.stoneMaterialParam.color = new THREE.Color(this.colorStone[index])
   }
 
   constructor( /**/
