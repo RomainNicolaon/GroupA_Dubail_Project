@@ -56,7 +56,7 @@
   a{
     text-decoration: none;
     color: white;
-    font-size: 5vh;
+    font-size: 140%;
     text-shadow: 3px 0px black;
     font-weight: bold;
     text-align: center;
@@ -72,7 +72,7 @@
 
 .containerText{
   padding-top: 5%;
-  height: 100vh;
+  height: 100%;
 }
 
   .history{
@@ -210,17 +210,18 @@
   .box{
     left: 45%;
     position: relative;
+    width: 50%;
 
 }
 
 .box span{
     display: inline-block;
-    width: 4vh;
-    height: 4vh;
+    width: 2vh;
+    height: 2vh;
     border-bottom: 3px solid rgb(2, 2, 2);
     border-right: 3px solid rgb(0, 0, 0);
     transform: rotate(135deg);
-    margin: -0.2vh;
+    margin: -0.01vh;
     animation: animate 3s infinite;
 }
 
