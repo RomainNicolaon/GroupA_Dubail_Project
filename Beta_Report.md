@@ -12,14 +12,13 @@
   - [2. Technologies Used](#2-technologies-used)
   - [3. GitHub Setup](#3-github-setup)
   - [4. Artistic Direction](#4-artistic-direction)
-  - [5. Structure of the Website](#5-structure-of-the-website)
-    - [- Index](#--index)
+  - [5. Structure of the App](#5-structure-of-the-app)
     - [- Jewel Page](#--jewel-page)
       - [Header](#header)
       - [Footer](#footer)
-    - [- Custom Pages](#-custom-pages)
-    - [- Form Page](#-form-page)
-    - [- Gratitude Page](#-gratitude-page)
+    - [- Custom Pages](#--custom-pages)
+    - [- Form Page](#--form-page)
+    - [- Gratitude Page](#--gratitude-page)
   - [6. Possible Improvement](#6-possible-improvement)
   - [Conclusion](#conclusion)
 
@@ -33,27 +32,33 @@ This project was the second of the year and the first managed by the alpha class
 
 Our first client is a luxury jewellery group called 'Dubail'.
 
-Dubail wanted a mobile application coded in HTML CSS and JavaScript where it is possible to customise different types of jewels with different metal and stone.
+Dubail wanted an Android application coded in HTML CSS and JavaScript where it is possible to customise different types of jewels with different metal and stone. We took care of all the html, css and javascript and the alphas had the job of coding a 3D jewel and converting our code into an Android application.
 
 This report is a condensed version of our 6 week project. This report is separated in different parts with the different pages of the app.
+
+This report will not contain the work of alphas, it will only focus on the work of betas 
 
 ## 2. Technologies Used
 
 During this project we learned and use some technologies to finish the project
 
--Languages
+  Languages
 
     - HTML
     - JavaScript
     - CSS
 
--Github
+  Github
 
     - Git
 
--Centralise by
+  Centralise by
 
     - visual studio code
+
+  Library
+
+    - Bootstrap 
 
 ## 3. GitHub Setup
 
@@ -65,9 +70,7 @@ We used the GitHub Desktop application for it,
 
 We took inspiration from Apple for the front page. The graphic style of the page remains close to that of Dubail so as not to forget that the customisation application is affiliated to this one. We have decided to keep the style simple and easy to use.
 
-## 5. Structure of the Website
-
-### - Index
+## 5. Structure of the App
 
 ### - Jewel Page
 
@@ -224,12 +227,153 @@ nav>a{
 
 ```
 
-For the footer we decided to link to the Dubail website's "Boutiques, Service and mention Legal" pages on a black background to match the colours of their site.the footer is always at the bottom of the application.However, after three weeks of work it was decided that the footer was not necessary for all pages on the application.After that it was change by the Alpha team the footer became a drop-down menu on the header.
+For the footer we decided to link to the Dubail App's "Boutiques, Service and mention Legal" pages on a black background to match the colours of their site.the footer is always at the bottom of the application.However, after three weeks of work it was decided that the footer was not necessary for all pages on the application.After that it was change by the Alpha team the footer became a drop-down menu on the header.
 
 ### - Custom Pages
-vhji
+
+For the customization of the different jewels we need different pages that allow to change the colour of the metal, the colour of the stone and to add a potential engraving.
+
+The first page you come to after choosing the jewel is the page for choosing the metal. We decided to do this because it seemed the most logical 
+
+```html
+<body>
+    
+    <img src="img/bague3D.jfif" alt="image bague3D">
+
+    <!-- start of the container for the menu buttons   -->
+
+<div class="btn-container">
+    <div class="col-md-12 menu">
+        <a class="col-md-3 menubutton" href="custom-metal-choice.html"> Choix du métal</a>
+        <a class="col-md-3 menubutton" href="custom-stone-choice.html">Choix de la pierre</a>
+        <a class="col-md-3 menubutton " href="custom-engraving.html">Gravure</a>
+        <a class="col-md-3 menubutton" href="formulaire.html"> Confirmation</a>
+      </div>
+
+    </div>
+     
+<!-- end of the container for the menu buttons -->
+    
+<!-- start of the container for the metal choice buttons -->
+
+    <div class="btn-choice">
+        <a class="box" href="#">Platine <img src="img/Platine.png" alt="Platine" class="imgMetal"></a>
+        <a class="box"  href="#">Or <img src="img/Or.png" alt="Gold" class="imgMetal"></a>
+        <a class="box"  href="#">Or Rose <img src="img/OrRose.png" alt="PinkGold" class="imgMetal"></a>
+        <a class="box"  href="#">Or Blanc <img src="img/OrBlanc.png" alt="WhiteGold" class="imgMetal"></a>
+    </div>
+ <!-- end of the container for the metal choice buttons -->
+ 
+    <footer>
+    </footer>
+</body>
+```
+
+Below we have the body of our first page.
+
+In this one we have two divs, the first one containing the navigation buttons and the second one containing the buttons for the different metal choices.
+There is also an image that helps us to get an overview of the page with a potential 3D model.
+
+For this app many bootstrap classes have been used to facilitate the responsive of the app. 
+
+```css
+/* Change the font of any text of the page     */
+body{
+    margin: auto ;
+    font-family: 'Cormorant Infant', serif;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(lightgrey, rgb(250, 250, 250));
+}
+
+
+.btn-container{
+  width: 100%;
+}
+
+
+ .menu{
+  display: flex;
+} 
+/* styling items and place them in line to be responsive of any devices */
+ .menubutton {
+   background-color: rgb(119, 119, 119);
+   padding: 4% ;
+   font-size: 73%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color: aliceblue;
+   text-decoration: none;
+   border: aliceblue solid 1px;
+   
+ }
+
+.menubutton:active{
+  background-color: rgb(161, 161, 161);
+  color: aliceblue;
+}
+```
+
+For the whole app we used the dubail font from their site. It is called 'Cormorant Infant'.
+
+The css code above contains the classes used to design the navigation buttons. The buttons are arranged in a row and they are all the same size thanks to the bootstrap class.
+
+The container 'col-md-12' allows to split the div into 12 columns of the same size no matter the screen size. Then with the class 'col-md-3' we define 4 zones with 3 columns each which allows to have 4 div of the same size displayed on the screen.
+
+```css
+/* display the buttons two by two  */
+.btn-choice{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 2%;
+  justify-content: center;
+}
+/* styling items and make items responsive of any devices */
+.box{
+  background-color: rgb(223, 223, 217);
+  width: 40%;
+  height: 100px;
+  padding: 1%;
+  margin: 2%;
+  border-radius: 10%;
+  font-size: 110%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  color: rgb(185, 185, 185);
+}
+```
+
+After the navigation buttons we will talk about the buttons for the different choices.
+
+The buttons are designed to look like the apples buttons that are used to change the colours of the Iphones. We chose this design because we felt it was the cleanest and easiest for the user to understand.
+
+The buttons is composed of a coloured circle in an image file and the name of the metal. The buttons are arranged two by two in columns.
+
+As for the stone selection page, it's pretty much the same as the one above, except that we changed the coloured circles in the buttons.
+
+The page that changes is the one for adding an engraving to the jewel.
+
+```html
+<!-- start of the container for the text box to engrave the jewel -->
+    <div class="container engraving-container">
+        <input class="form-control" type="text" placeholder="Entrez votre gravure">
+        <button class="confirm-btn">Confirmer</button>
+    </div>
+```
+This is the div that changes from the other pages. This one contains the text box and the confirm button for engraving.
+
+Of course, the user can browse the different pages as he ​wishes. When he is satisfied with his result he presses the confirm button which will open the form.
+
+
 ### - Form Page
-kkug
+cq
 
 ### - Gratitude Page
 
