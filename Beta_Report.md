@@ -65,16 +65,110 @@ We used the GitHub Desktop application for it,
 
 We took inspiration from Apple for the front page. The graphic style of the page remains close to that of Dubail so as not to forget that the customisation application is affiliated to this one. We have decided to keep the style simple and easy to use.
 
-## 5. Structure of the Website 
+## 5. Structure of the Website
+
 ### - Index
 
 ### - Jewel Page
 
+We make a carousel with html and css for this carousel we take images photoshop by the Alpha team. these images represent each jewel.
+they have two animations the first to show how to slide on this carousel.
 
+```css
 
-For the jewellery page we decided to use the jewellery images from the Dubail website which are each links to the page for customising the jewellery.The four images are positioned in a grid with the bootstrap classes.Bootstrap allows to create parts for each different div so it allows to assign them a defined place that is responsive for each part. Moreover the img-fluid class allows to make the images responsive for the different type of mobile devices.
+.box{
+    left: 45%;
+    position: relative;
+    width: 50%;
 
-However we change this page.We delete all images to make a carousel this one was create with html and css with all images and you click on the image to choose the jewel.
+}
+
+.box span{
+    display: inline-block;
+    width: 2vh;
+    height: 2vh;
+    border-bottom: 3px solid rgb(2, 2, 2);
+    border-right: 3px solid rgb(0, 0, 0);
+    transform: rotate(135deg);
+    margin: -0.01vh;
+    animation: animate 3s infinite;
+}
+
+.box span:nth-child(2){
+    animation-delay:-0.2s ;
+
+}
+.box span:nth-child(3){
+    animation-delay:-0.4s ;
+    transform: rotate(135deg);
+
+}
+
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: rotate(135deg) translate(-10px,-10px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(135deg) translate(10px,10px);
+    }
+}
+```
+
+The second animation is for the carousel the images change automatically.
+
+```css
+@keyframes tonext {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: 100%;
+    }
+    98% {
+      left: 100%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+  
+  @keyframes tostart {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: -300%;
+    }
+    98% {
+      left: -300%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+  
+  @keyframes snap {
+    96% {
+      scroll-snap-align: center;
+    }
+    97% {
+      scroll-snap-align: none;
+    }
+    99% {
+      scroll-snap-align: none;
+    }
+    100% {
+      scroll-snap-align: center;
+    }
+  }
+
+```
+
 
 #### Header
 
