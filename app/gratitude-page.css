@@ -1,12 +1,12 @@
 p {
     font-family: 'Cormorant Infant', serif;
     text-align: center;            
-    margin-top: 40%;
     font-size: 250%;
-}
+    margin-top: 25%;
+} 
+/* Parameters of the paragraph */
 
 #button {
-    display: block;
     width: 100px;
     text-align: center;
     color: #fff;
@@ -18,22 +18,24 @@ p {
     zoom: 175%;
     font-family: 'Quicksand', sans-serif;
 }
+/* Parameters of the button (the a in html) */
 
-#button:hover {
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 85%;
+}
+/* Parameters of the container */
+
+#button:active {
     background-color: lightslategray;
 }
+/* Parameters of the button when you click on it */
 
-header{
-    background-color: black;
-    color:white;
-    text-align: center;
-    height: 100px;      
-}
-
-body{
-    margin:auto;
-    padding: auto;
+html,body {
     background: linear-gradient(lightgrey, #fff);
+    height: 100%;
 } 
-
-/* Color gradient for the page */
+/* Parameters of the background */
