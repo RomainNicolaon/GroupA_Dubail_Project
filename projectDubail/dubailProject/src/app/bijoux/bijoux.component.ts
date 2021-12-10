@@ -13,6 +13,10 @@ export class BijouxComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getJewel(index:number){
+    
+  }
+
   emptyCache(){
     this.dataService.reload$()
   }

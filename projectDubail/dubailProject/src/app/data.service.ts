@@ -7,21 +7,22 @@ import { __await } from 'tslib';
 })
 export class DataService {
 
-  invokeStoneFunction = new EventEmitter();    
-  subsVarStone!: Subscription;    
-    
-  onStoneClick(index:number) {   
-    this.invokeStoneFunction.emit(index);    
+  invokeStoneFunction = new EventEmitter();
+  subsVarStone!: Subscription;
+
+  onStoneClick(index: number) {
+    this.invokeStoneFunction.emit(index);
   }
 
-  invokeMetalFunction = new EventEmitter();    
-  subsVarMetal!: Subscription;     
-    
-  onMetalClick(index:number) {    
-    this.invokeMetalFunction.emit(index);    
+  invokeMetalFunction = new EventEmitter();
+  subsVarMetal!: Subscription;
+
+  onMetalClick(index: number) {
+    this.invokeMetalFunction.emit(index);
   }
 
   reload$(){
-    setTimeout(() => {window.location.reload()}, 1)
+    console.log('reload')
+    setTimeout(() => {window.location.reload()},2)
   }
 }
