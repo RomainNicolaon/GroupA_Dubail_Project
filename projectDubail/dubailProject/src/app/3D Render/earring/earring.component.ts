@@ -41,7 +41,7 @@ export class EarringComponent implements OnInit {
 
 
   public colorMetal: number[] = [0xb3b3b3 /*silver*/, 0xcba135/*gold*/, 0xee918d /*rose*/, 0xffffff/*white*/];
-  public colorStone = [0xb9e9ff/*Diamand*/, 0x003500/*emerald*/, 0xFF1111/*ruby*/, 0x0101FF/*sapphire*/];
+  public colorStone = [0xb9e9ff/*Diamand*/, 0x003500/*emerald*/, 0xFF0101/*ruby*/, 0x0101FF/*sapphire*/];
 
 
   public metalMaterialParam = new MeshStandardMaterial({
