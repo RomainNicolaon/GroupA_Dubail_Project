@@ -42,7 +42,7 @@ export class RingComponent implements OnInit {
 
 
   public colorMetal: number[] = [0xb3b3b3 /*silver*/, 0xcba135/*gold*/, 0xee918d /*rose*/, 0xffffff/*white*/];
-  public colorStone = [0xE6E6FF/*Diamand*/, 0x003500/*emerald*/, 0xFF0101/*ruby*/, 0x0101FF/*sapphire*/];
+  public colorStone = [0xb9e9ff/*Diamand*/, 0x003500/*emerald*/, 0xFF1111/*ruby*/, 0x0101FF/*sapphire*/];
 
 
   public metalMaterialParam = new MeshStandardMaterial({
@@ -55,7 +55,7 @@ export class RingComponent implements OnInit {
     color: new THREE.Color(this.colorStone[2]),
     metalness: 1,
     transparent: true,
-    opacity: 0.8,
+    opacity: 0.87,
     roughness: 0.4
   })
 
