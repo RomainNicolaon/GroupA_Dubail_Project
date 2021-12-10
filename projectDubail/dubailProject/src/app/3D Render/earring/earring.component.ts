@@ -16,7 +16,7 @@ export class EarringComponent implements OnInit {
   private canvasRef: ElementRef | undefined;
 
   public JewelIndex: number = 2
-  public Jewel: string[] = ['/ring/scene.gltf', '/necklace/scene.gltf', '/earring/earring.gltf', '/bracelet/scene.gltf']
+  public Jewel: string[] = ['/ring/scene.gltf', '/necklace/scene.gltf', '/Earring/earring.gltf', '/bracelet/scene.gltf']
 
   @Input() public RotationSpeedX: number = 0.0;
   @Input() public RotationSpeedY: number = 0.0;
