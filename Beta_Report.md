@@ -592,3 +592,5 @@ The -webkit-animation-iteration-count set the animation only happens once.
 ```
 
 The @-moz-keyframes and the @-webkit-keyframes is use to set the opacity, and the fade for the fade animation.
+
+The welcome page has been deleted because the team managers didin't keep it.
