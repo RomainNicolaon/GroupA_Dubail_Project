@@ -1379,8 +1379,8 @@ input:checked+label .button_spots:nth-of-type(60) {
 }
 
 .button_inner:hover {
-  color: #2C3940;
-  background: white;
+  color: #ffffff;
+  background: rgb(0, 0, 0);
   box-shadow: 0px 17px 18px -14px rgba(0, 0, 0, 0.08);
 }
 
