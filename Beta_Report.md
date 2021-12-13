@@ -13,6 +13,7 @@
   - [3. GitHub Setup](#3-github-setup)
   - [4. Artistic Direction](#4-artistic-direction)
   - [5. Structure of the App](#5-structure-of-the-app)
+    - [Welcome page](#welcome-page)
     - [- Jewel Page](#--jewel-page)
       - [Header](#header)
       - [Footer](#footer)
@@ -20,7 +21,6 @@
     - [- Form Page](#--form-page)
     - [- Gratitude Page](#--gratitude-page)
   - [6. Possible Improvement](#6-possible-improvement)
-  - [Conclusion](#conclusion)
 
 </details>
 
@@ -71,6 +71,117 @@ We used the GitHub Desktop application for it,
 We took inspiration from Apple for the front page. The graphic style of the page remains close to that of Dubail so as not to forget that the customisation application is affiliated to this one. We have decided to keep the style simple and easy to use.
 
 ## 5. Structure of the App
+
+
+### Welcome page
+
+
+For the first page of the application, we have made a charging page. We used bootstrap.
+ 
+```html
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+```
+
+This link allow to use the Bootstrap library.
+
+We have link the index.html to the index.css.
+
+```html
+<link rel="stylesheet" href="index.css">
+```
+
+We also had a index.js which allows to redirect to the jewel page. We link the .html to the .js.
+
+```html
+ <script src="index.js"></script>
+```
+
+The .js file is the timer for the loading page.
+
+```js
+setTimeout(function(){
+    window.location.href = 'bijou.html';
+    }, 3000);
+```
+
+setTimeout is use to define the time the user will spend on the page to 3000 miliseconds.
+window.location.href is use to redirect the user to bijou.html after the timer.
+
+
+We had a Dubail logo in .svg.
+We have center the SVG of the Dubail logo by puting it in a container.
+
+```html
+<div class="container">
+```
+
+```css
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: middle;
+    max-width: 100%;
+    height: auto;
+    height: 100%;
+    max-height: 80%;
+    align-content: center;
+}
+```
+
+The flex property is a shorthand property that defines the ability of a flexible element to change its dimensions in order to fill the available space of its container.
+We justify and align the content to center to put the container in the center of the screen and we align item to the middle to put it in the center of the screen. With these property, the .svg is verticaly and horizontaly align.
+We put the height to auto to make te height automatic depending on the screen size and to 100% to put a maximum size.
+
+
+We also add a spinner below the Dubail logo in css.
+
+```html
+<div class="spinner-border" role="status">
+              <span class="sr-only"></span>
+            </div>
+```
+
+We have made a fading of 2 seconds when the page load before the logo and spinners before they are displayed.
+
+```css
+body {
+    background-color: whitesmoke;
+    -webkit-animation-name:FADE;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:1;
+    -moz-animation-name: FADE;
+    -moz-animation-duration: 2s;
+    background: linear-gradient(lightgrey, #fff);
+}
+```
+
+The -webkit-animation-duration and the -webkit-animation-duration is to set the duration of the animation to 2 seconds. 
+The -webkit-animation-iteration-count set the animation only happens once.
+
+```css
+@-moz-keyframes FADE{
+    0%{ 
+    opacity: 0;
+    }
+    100% { 
+    opacity: 1;
+    }
+}
+@-webkit-keyframes FADE{
+    0%{ 
+    opacity: 0;
+    }
+    100% { 
+    opacity: 1;
+
+    }
+}
+```
+
+The @-moz-keyframes and the @-webkit-keyframes is use to set the opacity, and the fade for the fade animation.
+
+The welcome page has been deleted because the team managers didin't keep it.
+
 
 ### - Jewel Page
 
@@ -483,114 +594,10 @@ html,body {
 
 This change the background color of the body with a linear gradient.
 ## 6. Possible Improvement 
-## Conclusion
+
+I think that to improve our application we should employ an info graphic designer to redo the circles for the stone colours
+and also to add swipe animations to return to the previous page.
 
 
-## The Welcome page
 
 
-For the first page of the application, we have made a charging page. We used bootstrap.
- 
-```html
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-```
-
-This link allow to use the Bootstrap library.
-
-We have link the index.html to the index.css.
-
-```html
-<link rel="stylesheet" href="index.css">
-```
-
-We also had a index.js which allows to redirect to the jewel page. We link the .html to the .js.
-
-```html
- <script src="index.js"></script>
-```
-
-The .js file is the timer for the loading page.
-
-```js
-setTimeout(function(){
-    window.location.href = 'bijou.html';
-    }, 3000);
-```
-
-setTimeout is use to define the time the user will spend on the page to 3000 miliseconds.
-window.location.href is use to redirect the user to bijou.html after the timer.
-
-
-We had a Dubail logo in .svg.
-We have center the SVG of the Dubail logo by puting it in a container.
-
-```html
-<div class="container">
-```
-
-```css
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: middle;
-    max-width: 100%;
-    height: auto;
-    height: 100%;
-    max-height: 80%;
-    align-content: center;
-}
-```
-
-The flex property is a shorthand property that defines the ability of a flexible element to change its dimensions in order to fill the available space of its container.
-We justify and align the content to center to put the container in the center of the screen and we align item to the middle to put it in the center of the screen. With these property, the .svg is verticaly and horizontaly align.
-We put the height to auto to make te height automatic depending on the screen size and to 100% to put a maximum size.
-
-
-We also add a spinner below the Dubail logo in css.
-
-```html
-<div class="spinner-border" role="status">
-              <span class="sr-only"></span>
-            </div>
-```
-
-We have made a fading of 2 seconds when the page load before the logo and spinners before they are displayed.
-
-```css
-body {
-    background-color: whitesmoke;
-    -webkit-animation-name:FADE;
-    -webkit-animation-duration:2s;
-    -webkit-animation-iteration-count:1;
-    -moz-animation-name: FADE;
-    -moz-animation-duration: 2s;
-    background: linear-gradient(lightgrey, #fff);
-}
-```
-
-The -webkit-animation-duration and the -webkit-animation-duration is to set the duration of the animation to 2 seconds. 
-The -webkit-animation-iteration-count set the animation only happens once.
-
-```css
-@-moz-keyframes FADE{
-    0%{ 
-    opacity: 0;
-    }
-    100% { 
-    opacity: 1;
-    }
-}
-@-webkit-keyframes FADE{
-    0%{ 
-    opacity: 0;
-    }
-    100% { 
-    opacity: 1;
-
-    }
-}
-```
-
-The @-moz-keyframes and the @-webkit-keyframes is use to set the opacity, and the fade for the fade animation.
-
-The welcome page has been deleted because the team managers didin't keep it.
