@@ -13,10 +13,10 @@ Group A Project Report
 - Jewel selection
 - Jewel display
 - material choice
-- engraving
+
 - form
-5. Improvement
-6. Conclusion  
+1. Improvement
+2. Conclusion  
 </details>
 
 ---
@@ -36,7 +36,12 @@ Angular is TypeScript framework for web application, this framework
 is usefull developpement tool on this project.
 Trello is an app used for manager and organize our task and divide this of all of team. With deadline, to do, in progress, finish and out of scoop  section, it's the main manage tool used on this project.
 ## 3. GitHub
-
+On GitHub repository, we have 3 branch, main, save and test.
+Most features are commit on test branch.
+3 folders are used, render, projectDubail and app.
+Render is used for 3D render, test some feature on JavaScript with THREE.JS .
+ProjectDubail is actually an Angular app by Alpha Groupe. Combine with THREE.JS, Angular can display 3D model very well and usefull for app feature in TypeScript.
+App by Beta Groupe, is used for interface of app. This part used HTML, CSS and JavaScript.
 ## 4. Angular App
 
 ### - Jewel selection
@@ -45,7 +50,7 @@ Trello is an app used for manager and organize our task and divide this of all o
 
 ### - Material choice
 
-### - Engraving
+
 
 ### - Form
 
