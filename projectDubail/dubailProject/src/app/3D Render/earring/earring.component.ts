@@ -70,7 +70,7 @@ export class EarringComponent implements OnInit {
     }());
 
     let controls = new OrbitControls(this.camera, this.renderer.domElement);
-    this.renderer.outputEncoding = THREE.sRGBEncoding;
+
     this.service3D.loadModel(this.JewelIndex, this.jewel, this.camera,this.scene)
     controls.update()
   }

@@ -35,7 +35,7 @@ export class Services3DService {
       pointLight.intensity = 0.3
       pointLight.position.set(0, 0, 0);
       const col = 0xffffff
-      const intes = 1.5
+      const intes = 2
       const Light1 = new THREE.SpotLight(col);
       Light1.intensity = intes
       Light1.position.set(0, -10000, 10000);
