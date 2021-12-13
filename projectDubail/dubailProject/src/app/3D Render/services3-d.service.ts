@@ -13,7 +13,7 @@ export class Services3DService {
 
   public metalMaterialParam = new MeshStandardMaterial({
     color: new THREE.Color(this.colorMetal[1]),
-    metalness: 0.90,
+    metalness: 0.95,
     roughness: 0.4
   })
 
@@ -25,7 +25,7 @@ export class Services3DService {
     roughness: 0.4
   })
 
-  public jewelArr: string[] = ['/ring/scene.gltf', '/necklace/scene.gltf', '/earring/earring.gltf', '/bracelet/scene.gltf']
+  public jewelArr: string[] = ['/ring/scene.gltf', '/necklace/scene.gltf', '/Earring/earring.gltf', '/bracelet/scene.gltf']
 
   loadModel(indexJewel: number, jewel: THREE.Group, camera: PerspectiveCamera, scene: THREE.Scene) {
     new GLTFLoader().load(`../../assets/scene${this.jewelArr[indexJewel]}`, (gltf) => {
@@ -35,7 +35,7 @@ export class Services3DService {
       pointLight.intensity = 0.3
       pointLight.position.set(0, 0, 0);
       const col = 0xffffff
-      const intes = 2
+      const intes = 1.5
       const Light1 = new THREE.SpotLight(col);
       Light1.intensity = intes
       Light1.position.set(0, -10000, 10000);
