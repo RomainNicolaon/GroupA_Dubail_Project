@@ -2,9 +2,8 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 import * as THREE from 'three';
-import { MeshStandardMaterial } from 'three';
 import { OrbitControls } from 'three-orbitcontrols-ts';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { Services3DService } from '../services3-d.service';
 
 @Component({
   selector: 'app-necklace',
@@ -15,8 +14,10 @@ export class NecklaceComponent implements OnInit {
   @ViewChild('canvas')
   private canvasRef: ElementRef | undefined;
 
+  constructor(private dataService: DataService, public router: Router, private service3D: Services3DService
+    ) { }
+
   public JewelIndex: number = 1
-  public Jewel: string[] = ['/ring/scene.gltf', '/necklace/scene.gltf', '/earring/earring.gltf', '/bracelet/scene.gltf']
 
   @Input() public RotationSpeedX: number = 0.0;
   @Input() public RotationSpeedY: number = 0.0;
@@ -32,113 +33,10 @@ export class NecklaceComponent implements OnInit {
   public renderer!: THREE.WebGLRenderer;
 
   tex: THREE.Texture | null | undefined;
-  private ring!: THREE.Group
-  private children = new Array()
+  private jewel!: THREE.Group
 
   private get canvas(): HTMLCanvasElement {
     return this.canvasRef?.nativeElement
-  }
-
-
-  public colorMetal: number[] = [0xb3b3b3 /*silver*/, 0xcba135/*gold*/, 0xee918d /*rose*/, 0xffffff/*white*/];
-  public colorStone = [0xb9e9ff/*Diamand*/, 0x003500/*emerald*/, 0xFF0101/*ruby*/, 0x0101FF/*sapphire*/];
-
-
-
-  public metalMaterialParam = new MeshStandardMaterial({
-    color: new THREE.Color(this.colorMetal[1]),
-    metalness: 0.95,
-    roughness: 0.4
-
-  })
-  public stoneMaterialParam = new MeshStandardMaterial({
-    color: new THREE.Color(this.colorStone[2]),
-    metalness: 1,
-    transparent: true,
-    opacity: 0.87,
-    roughness: 0.4
-  })
-
-  loadModel(indexJewel: number) {
-    //this.scene.clear()
-    const loader = new GLTFLoader().load(`../../assets/scene${this.Jewel[indexJewel]}`, (gltf) => {
-      this.renderer.outputEncoding = THREE.sRGBEncoding;
-
-      const pointLight = new THREE.PointLight(0xffffff);
-      pointLight.intensity = 0.3
-      pointLight.position.set(0, 0, 0);
-      const col = 0xffffff
-      const intes = 1.5
-      const Light1 = new THREE.SpotLight(col);
-      Light1.intensity = intes
-      Light1.position.set(0, -10000, 10000);
-      const Light2 = new THREE.SpotLight(col);
-      Light2.intensity = intes
-      Light2.position.set(0, -10000, -10000);
-      const Light3 = new THREE.SpotLight(col);
-      Light3.intensity = intes
-      Light3.position.set(0, 10000, 0);
-
-      this.ring = gltf.scene
-      this.camera.add(pointLight);
-      this.ring.add(Light1, Light2, Light3);
-      this.ring.traverse((node) => {
-
-        if (node instanceof THREE.Mesh) {
-          this.children.push(node)
-        }
-
-      });
-
-      switch (indexJewel) {
-        case 1:
-          for (let i = 0; i < this.children.length; i++) { //For the necklace
-            if (i == 0) {
-              console.log('here 1')
-              this.children[i].material = this.stoneMaterialParam;
-              continue;
-            }
-            this.children[i].material = this.metalMaterialParam;
-          }
-          break;
-        case 2:
-          for (let i = 0; i < this.children.length; i++) { //For the earring
-            if (i == 0 || i == 1) {
-              console.log('here 2')
-              this.children[i].material = this.stoneMaterialParam;
-              continue;
-            }
-            this.children[i].material = this.metalMaterialParam;
-          }
-          this.ring.position.y = -2.2
-          this.camera.position.z = 280
-          break;
-        case 3:
-          for (let i = 0; i < this.children.length; i++) { //For the bracelet
-            if (i == 9 || i == 8) {
-              console.log('here 3')
-              this.children[i].material = this.stoneMaterialParam;
-              continue;
-            }
-            this.children[i].material = this.metalMaterialParam;
-          }
-          break;
-        default:
-          for (let i = 0; i < this.children.length; i++) { //For the ring 
-            if (i == 1) {
-              console.log('here 0')                                 // Needs to be changed per model
-              this.children[i].material = this.stoneMaterialParam;
-              continue;
-            }
-            this.children[i].material = this.metalMaterialParam;
-          }
-          break;
-      }
-
-      this.scene.add(this.ring);
-      this.scene.add(this.camera)
-    }
-    );
   }
 
   private createScene() {
@@ -172,20 +70,17 @@ export class NecklaceComponent implements OnInit {
     }());
 
     let controls = new OrbitControls(this.camera, this.renderer.domElement);
-    this.loadModel(this.JewelIndex)
+    this.service3D.loadModel(this.JewelIndex, this.jewel, this.camera,this.scene)
     controls.update()
   }
 
   metal(index: number) {
-    this.metalMaterialParam.color = new THREE.Color(this.colorMetal[index])
+    this.service3D.metalMaterialParam.color = new THREE.Color(this.service3D.colorMetal[index])
   }
 
   stone(index: number) { /**/
-    this.stoneMaterialParam.color = new THREE.Color(this.colorStone[index])
+    this.service3D.stoneMaterialParam.color = new THREE.Color(this.service3D.colorStone[index])
   }
-
-  constructor(private dataService: DataService, public router: Router
-  ) { }
 
   ngOnInit() { /**/
     if (this.dataService.subsVarStone == undefined) {
@@ -206,5 +101,4 @@ export class NecklaceComponent implements OnInit {
     this.createScene();
     this.startRenderingLoop();
   }
-
 }

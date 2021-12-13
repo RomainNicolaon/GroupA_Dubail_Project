@@ -1,5 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
+import { PerspectiveCamera } from 'three';
 import { __await } from 'tslib';
 
 @Injectable({
@@ -7,6 +8,7 @@ import { __await } from 'tslib';
 })
 export class DataService {
 
+  //alows metal and stone to be called from one component to an other
   invokeStoneFunction = new EventEmitter();
   subsVarStone!: Subscription;
 
@@ -21,8 +23,7 @@ export class DataService {
     this.invokeMetalFunction.emit(index);
   }
 
-  reload$(){
-    console.log('reload')
+  reload$(){ //need to reload the page otherwise canvas bug
     setTimeout(() => {window.location.reload()},2)
   }
 }
