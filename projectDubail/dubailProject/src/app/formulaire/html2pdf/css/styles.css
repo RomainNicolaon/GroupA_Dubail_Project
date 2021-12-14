@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+}
+.logau{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text{
+    margin-top: 5%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    width: 20%;
+}
+.box{
+    width: 20em;
+    height: 20em;
+    background-color: white;
+
+}
+.box > img {
+    width: 100%;
+}
