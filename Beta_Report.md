@@ -1,4 +1,4 @@
- b
+
 # Group A Project Report
 
 ---
@@ -72,12 +72,10 @@ We took inspiration from Apple for the front page. The graphic style of the page
 
 ## 5. Structure of the App
 
-
 ### Welcome page
 
-
 For the first page of the application, we have made a charging page. We used bootstrap.
- 
+
 ```html
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 ```
@@ -107,7 +105,6 @@ setTimeout(function(){
 setTimeout is use to define the time the user will spend on the page to 3000 miliseconds.
 window.location.href is use to redirect the user to bijou.html after the timer.
 
-
 We had a Dubail logo in .svg.
 We have center the SVG of the Dubail logo by puting it in a container.
 
@@ -131,7 +128,6 @@ We have center the SVG of the Dubail logo by puting it in a container.
 The flex property is a shorthand property that defines the ability of a flexible element to change its dimensions in order to fill the available space of its container.
 We justify and align the content to center to put the container in the center of the screen and we align item to the middle to put it in the center of the screen. With these property, the .svg is verticaly and horizontaly align.
 We put the height to auto to make te height automatic depending on the screen size and to 100% to put a maximum size.
-
 
 We also add a spinner below the Dubail logo in css.
 
@@ -181,7 +177,6 @@ The -webkit-animation-iteration-count set the animation only happens once.
 The @-moz-keyframes and the @-webkit-keyframes is use to set the opacity, and the fade for the fade animation.
 
 The welcome page has been deleted because the team managers didin't keep it.
-
 
 ### - Jewel Page
 
@@ -344,7 +339,7 @@ For the footer we decided to link to the Dubail App's "Boutiques, Service and me
 
 For the customization of the different jewels we need different pages that allow to change the colour of the metal, the colour of the stone and to add a potential engraving.
 
-The first page you come to after choosing the jewel is the page for choosing the metal. We decided to do this because it seemed the most logical 
+The first page you come to after choosing the jewel is the page for choosing the metal. We decided to do this because it seemed the most logical.
 
 ```html
 <body>
@@ -478,10 +473,10 @@ The page that changes is the one for adding an engraving to the jewel.
         <button class="confirm-btn">Confirmer</button>
     </div>
 ```
+
 This is the div that changes from the other pages. This one contains the text box and the confirm button for engraving.
 
 Of course, the user can browse the different pages as he ​wishes. When he is satisfied with his result he presses the confirm button which will open the form.
-
 
 ### - Form Page
 cq
@@ -541,6 +536,7 @@ p {
 ```
 
 Description line by line :
+
 - font family,
 - alignement of the text at the middle of the container (here it's also the middle of the page),
 - enlargment of the text size,
@@ -566,7 +562,8 @@ You can have only one element in an id so with the #, so the css can only change
 
 At the beginning, with the "a", you just have a clickable link but with the css, we modified the form of the "a" box with this block of css.
 
-Desceiption line by line :
+Description line by line :
+
 - width,
 - alignment of the text,
 - color of the background,
@@ -593,11 +590,8 @@ html,body {
 ```
 
 This change the background color of the body with a linear gradient.
-## 6. Possible Improvement 
+
+## 6. Possible Improvement
 
 I think that to improve our application we should employ an info graphic designer to redo the circles for the stone colours
 and also to add swipe animations to return to the previous page.
-
-
-
-
