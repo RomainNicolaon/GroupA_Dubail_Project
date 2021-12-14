@@ -11,10 +11,12 @@ import { ThanksComponent } from './thanks/thanks.component';
 import { CustomMetalComponent } from './custom/custom-metal/custom-metal.component';
 import { CustomStoneComponent } from './custom/custom-stone/custom-stone.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
-import { CubeComponent } from './cube/cube.component';
-import { CustomComponent } from './custom/custom.component';
 import { CustomEngraveComponent } from './custom/custom-engrave/custom-engrave.component';
 import { DataService } from './data.service';
+import { RingComponent } from './3D Render/ring/ring.component';
+import { EarringComponent } from './3D Render/earring/earring.component';
+import { NecklaceComponent } from './3D Render/necklace/necklace.component';
+import { BraceletComponent } from './3D Render/bracelet/bracelet.component';
 
 const routes: Routes = [
   { path: '', component: BijouxComponent },
@@ -23,7 +25,31 @@ const routes: Routes = [
   { path: 'thanks', component: ThanksComponent },
   { path: 'formulaire', component: FormulaireComponent },
   {
-    path: 'custom', component: CustomComponent,
+    path: 'bracelet', component: BraceletComponent,
+    children: [
+      { path: 'engrave', component: CustomEngraveComponent },
+      { path: 'stone', component: CustomStoneComponent },
+      { path: 'metal', component: CustomMetalComponent }
+    ]
+  },
+  {
+    path: 'earring', component: EarringComponent,
+    children: [
+      { path: 'engrave', component: CustomEngraveComponent },
+      { path: 'stone', component: CustomStoneComponent },
+      { path: 'metal', component: CustomMetalComponent }
+    ]
+  },
+  {
+    path: 'necklace', component: NecklaceComponent,
+    children: [
+      { path: 'engrave', component: CustomEngraveComponent },
+      { path: 'stone', component: CustomStoneComponent },
+      { path: 'metal', component: CustomMetalComponent }
+    ]
+  },
+  {
+    path: 'ring', component: RingComponent,
     children: [
       { path: 'engrave', component: CustomEngraveComponent },
       { path: 'stone', component: CustomStoneComponent },
@@ -44,12 +70,14 @@ const routes: Routes = [
     CustomMetalComponent,
     CustomStoneComponent,
     FormulaireComponent,
-    CubeComponent,
-    CustomComponent
+    RingComponent,
+    EarringComponent,
+    NecklaceComponent,
+    BraceletComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes) //enable those routes in module,
+    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}) //enable those routes in module,
 
 
   ],

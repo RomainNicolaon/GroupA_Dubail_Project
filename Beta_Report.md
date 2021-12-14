@@ -1,4 +1,4 @@
- b
+
 # Group A Project Report
 
 ---
@@ -12,16 +12,15 @@
   - [2. Technologies Used](#2-technologies-used)
   - [3. GitHub Setup](#3-github-setup)
   - [4. Artistic Direction](#4-artistic-direction)
-  - [5. Structure of the Website](#5-structure-of-the-website)
-    - [- Index](#--index)
+  - [5. Structure of the App](#5-structure-of-the-app)
+    - [Welcome page](#welcome-page)
     - [- Jewel Page](#--jewel-page)
       - [Header](#header)
       - [Footer](#footer)
-    - [- Custom Pages](#-custom-pages)
-    - [- Form Page](#-form-page)
-    - [- Gratitude Page](#-gratitude-page)
+    - [- Custom Pages](#--custom-pages)
+    - [- Form Page](#--form-page)
+    - [- Gratitude Page](#--gratitude-page)
   - [6. Possible Improvement](#6-possible-improvement)
-  - [Conclusion](#conclusion)
 
 </details>
 
@@ -33,27 +32,33 @@ This project was the second of the year and the first managed by the alpha class
 
 Our first client is a luxury jewellery group called 'Dubail'.
 
-Dubail wanted a mobile application coded in HTML CSS and JavaScript where it is possible to customise different types of jewels with different metal and stone.
+Dubail wanted an Android application coded in HTML CSS and JavaScript where it is possible to customise different types of jewels with different metal and stone. We took care of all the html, css and javascript and the alphas had the job of coding a 3D jewel and converting our code into an Android application.
 
 This report is a condensed version of our 6 week project. This report is separated in different parts with the different pages of the app.
+
+This report will not contain the work of alphas, it will only focus on the work of betas 
 
 ## 2. Technologies Used
 
 During this project we learned and use some technologies to finish the project
 
--Languages
+  Languages
 
     - HTML
     - JavaScript
     - CSS
 
--Github
+  Github
 
     - Git
 
--Centralise by
+  Centralise by
 
     - visual studio code
+
+  Library
+
+    - Bootstrap 
 
 ## 3. GitHub Setup
 
@@ -65,9 +70,113 @@ We used the GitHub Desktop application for it,
 
 We took inspiration from Apple for the front page. The graphic style of the page remains close to that of Dubail so as not to forget that the customisation application is affiliated to this one. We have decided to keep the style simple and easy to use.
 
-## 5. Structure of the Website
+## 5. Structure of the App
 
-### - Index
+### Welcome page
+
+For the first page of the application, we have made a charging page. We used bootstrap.
+
+```html
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+```
+
+This link allow to use the Bootstrap library.
+
+We have link the index.html to the index.css.
+
+```html
+<link rel="stylesheet" href="index.css">
+```
+
+We also had a index.js which allows to redirect to the jewel page. We link the .html to the .js.
+
+```html
+ <script src="index.js"></script>
+```
+
+The .js file is the timer for the loading page.
+
+```js
+setTimeout(function(){
+    window.location.href = 'bijou.html';
+    }, 3000);
+```
+
+setTimeout is use to define the time the user will spend on the page to 3000 miliseconds.
+window.location.href is use to redirect the user to bijou.html after the timer.
+
+We had a Dubail logo in .svg.
+We have center the SVG of the Dubail logo by puting it in a container.
+
+```html
+<div class="container">
+```
+
+```css
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: middle;
+    max-width: 100%;
+    height: auto;
+    height: 100%;
+    max-height: 80%;
+    align-content: center;
+}
+```
+
+The flex property is a shorthand property that defines the ability of a flexible element to change its dimensions in order to fill the available space of its container.
+We justify and align the content to center to put the container in the center of the screen and we align item to the middle to put it in the center of the screen. With these property, the .svg is verticaly and horizontaly align.
+We put the height to auto to make te height automatic depending on the screen size and to 100% to put a maximum size.
+
+We also add a spinner below the Dubail logo in css.
+
+```html
+<div class="spinner-border" role="status">
+              <span class="sr-only"></span>
+            </div>
+```
+
+We have made a fading of 2 seconds when the page load before the logo and spinners before they are displayed.
+
+```css
+body {
+    background-color: whitesmoke;
+    -webkit-animation-name:FADE;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:1;
+    -moz-animation-name: FADE;
+    -moz-animation-duration: 2s;
+    background: linear-gradient(lightgrey, #fff);
+}
+```
+
+The -webkit-animation-duration and the -webkit-animation-duration is to set the duration of the animation to 2 seconds. 
+The -webkit-animation-iteration-count set the animation only happens once.
+
+```css
+@-moz-keyframes FADE{
+    0%{ 
+    opacity: 0;
+    }
+    100% { 
+    opacity: 1;
+    }
+}
+@-webkit-keyframes FADE{
+    0%{ 
+    opacity: 0;
+    }
+    100% { 
+    opacity: 1;
+
+    }
+}
+```
+
+The @-moz-keyframes and the @-webkit-keyframes is use to set the opacity, and the fade for the fade animation.
+
+The welcome page has been deleted because the team managers didin't keep it.
 
 ### - Jewel Page
 
@@ -224,12 +333,153 @@ nav>a{
 
 ```
 
-For the footer we decided to link to the Dubail website's "Boutiques, Service and mention Legal" pages on a black background to match the colours of their site.the footer is always at the bottom of the application.However, after three weeks of work it was decided that the footer was not necessary for all pages on the application.After that it was change by the Alpha team the footer became a drop-down menu on the header.
+For the footer we decided to link to the Dubail App's "Boutiques, Service and mention Legal" pages on a black background to match the colours of their site.the footer is always at the bottom of the application.However, after three weeks of work it was decided that the footer was not necessary for all pages on the application.After that it was change by the Alpha team the footer became a drop-down menu on the header.
 
 ### - Custom Pages
-vhji
+
+For the customization of the different jewels we need different pages that allow to change the colour of the metal, the colour of the stone and to add a potential engraving.
+
+The first page you come to after choosing the jewel is the page for choosing the metal. We decided to do this because it seemed the most logical.
+
+```html
+<body>
+    
+    <img src="img/bague3D.jfif" alt="image bague3D">
+
+    <!-- start of the container for the menu buttons   -->
+
+<div class="btn-container">
+    <div class="col-md-12 menu">
+        <a class="col-md-3 menubutton" href="custom-metal-choice.html"> Choix du métal</a>
+        <a class="col-md-3 menubutton" href="custom-stone-choice.html">Choix de la pierre</a>
+        <a class="col-md-3 menubutton " href="custom-engraving.html">Gravure</a>
+        <a class="col-md-3 menubutton" href="formulaire.html"> Confirmation</a>
+      </div>
+
+    </div>
+     
+<!-- end of the container for the menu buttons -->
+    
+<!-- start of the container for the metal choice buttons -->
+
+    <div class="btn-choice">
+        <a class="box" href="#">Platine <img src="img/Platine.png" alt="Platine" class="imgMetal"></a>
+        <a class="box"  href="#">Or <img src="img/Or.png" alt="Gold" class="imgMetal"></a>
+        <a class="box"  href="#">Or Rose <img src="img/OrRose.png" alt="PinkGold" class="imgMetal"></a>
+        <a class="box"  href="#">Or Blanc <img src="img/OrBlanc.png" alt="WhiteGold" class="imgMetal"></a>
+    </div>
+ <!-- end of the container for the metal choice buttons -->
+ 
+    <footer>
+    </footer>
+</body>
+```
+
+Below we have the body of our first page.
+
+In this one we have two divs, the first one containing the navigation buttons and the second one containing the buttons for the different metal choices.
+There is also an image that helps us to get an overview of the page with a potential 3D model.
+
+For this app many bootstrap classes have been used to facilitate the responsive of the app. 
+
+```css
+/* Change the font of any text of the page     */
+body{
+    margin: auto ;
+    font-family: 'Cormorant Infant', serif;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(lightgrey, rgb(250, 250, 250));
+}
+
+
+.btn-container{
+  width: 100%;
+}
+
+
+ .menu{
+  display: flex;
+} 
+/* styling items and place them in line to be responsive of any devices */
+ .menubutton {
+   background-color: rgb(119, 119, 119);
+   padding: 4% ;
+   font-size: 73%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color: aliceblue;
+   text-decoration: none;
+   border: aliceblue solid 1px;
+   
+ }
+
+.menubutton:active{
+  background-color: rgb(161, 161, 161);
+  color: aliceblue;
+}
+```
+
+For the whole app we used the dubail font from their site. It is called 'Cormorant Infant'.
+
+The css code above contains the classes used to design the navigation buttons. The buttons are arranged in a row and they are all the same size thanks to the bootstrap class.
+
+The container 'col-md-12' allows to split the div into 12 columns of the same size no matter the screen size. Then with the class 'col-md-3' we define 4 zones with 3 columns each which allows to have 4 div of the same size displayed on the screen.
+
+```css
+/* display the buttons two by two  */
+.btn-choice{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 2%;
+  justify-content: center;
+}
+/* styling items and make items responsive of any devices */
+.box{
+  background-color: rgb(223, 223, 217);
+  width: 40%;
+  height: 100px;
+  padding: 1%;
+  margin: 2%;
+  border-radius: 10%;
+  font-size: 110%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  color: rgb(185, 185, 185);
+}
+```
+
+After the navigation buttons we will talk about the buttons for the different choices.
+
+The buttons are designed to look like the apples buttons that are used to change the colours of the Iphones. We chose this design because we felt it was the cleanest and easiest for the user to understand.
+
+The buttons is composed of a coloured circle in an image file and the name of the metal. The buttons are arranged two by two in columns.
+
+As for the stone selection page, it's pretty much the same as the one above, except that we changed the coloured circles in the buttons.
+
+The page that changes is the one for adding an engraving to the jewel.
+
+```html
+<!-- start of the container for the text box to engrave the jewel -->
+    <div class="container engraving-container">
+        <input class="form-control" type="text" placeholder="Entrez votre gravure">
+        <button class="confirm-btn">Confirmer</button>
+    </div>
+```
+
+This is the div that changes from the other pages. This one contains the text box and the confirm button for engraving.
+
+Of course, the user can browse the different pages as he ​wishes. When he is satisfied with his result he presses the confirm button which will open the form.
+
 ### - Form Page
-kkug
+cq
 
 ### - Gratitude Page
 
@@ -286,6 +536,7 @@ p {
 ```
 
 Description line by line :
+
 - font family,
 - alignement of the text at the middle of the container (here it's also the middle of the page),
 - enlargment of the text size,
@@ -311,7 +562,8 @@ You can have only one element in an id so with the #, so the css can only change
 
 At the beginning, with the "a", you just have a clickable link but with the css, we modified the form of the "a" box with this block of css.
 
-Desceiption line by line :
+Description line by line :
+
 - width,
 - alignment of the text,
 - color of the background,
@@ -338,6 +590,8 @@ html,body {
 ```
 
 This change the background color of the body with a linear gradient.
-## 6. Possible Improvement 
-## Conclusion
 
+## 6. Possible Improvement
+
+I think that to improve our application we should employ an info graphic designer to redo the circles for the stone colours
+and also to add swipe animations to return to the previous page.

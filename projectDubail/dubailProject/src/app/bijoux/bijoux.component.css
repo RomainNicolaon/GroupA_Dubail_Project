@@ -10,7 +10,10 @@ h2{
   margin-top: 10%;
 } 
 button{
-  display: none;
+  background: transparent;
+  border: none !important;
+  font-size:0;
+  height: 100%;
 }
 body{
   padding: auto;

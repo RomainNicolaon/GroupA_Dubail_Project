@@ -51,7 +51,7 @@ img {
     background-color: rgb(223, 223, 217);
     width: 40%;
     height: 100px;
-    padding: 1%;
+    padding: 4%;
     margin: 2%;
     border-radius: 10%;
     font-size: 110%;
@@ -60,8 +60,17 @@ img {
     align-items: center;
     flex-direction: column;
     text-decoration: none;
-    color: black;
+    color: transparent;
+    border-bottom: 4px solid #000000;
+    text-shadow: 0px -2px #000000;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
   }
+  .box:active {
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    border-bottom: 1px solid;
+}
   
   .box:focus {
   
@@ -78,7 +87,7 @@ img {
   }
   
   .imgStone {
-    height: 80%;
+    height: 100%;
     max-height: 100%;
     width: auto;
   }
