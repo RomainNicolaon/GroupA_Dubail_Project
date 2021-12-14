@@ -1,4 +1,5 @@
 
+
 #  Group A Project report 
 
 ---
@@ -54,26 +55,18 @@ This part display actually some gltf model of jewels, ring, earring, necklace an
 Each model has its own 3D render component, and with services3-d, its initalize some propetize of display jewel like material(more detail below), camera angle, light display, gltf loader and gltf model. Customers can turn the model to each direction(360°).
 ### - Material choice
 Customers can change metal and stone color. Each color correspond to an hexdecimal number:
-
- public colorMetal:number[] = [0xb3b3b3 /*silver*/, 0xcba135/*gold*/, 0xee918d /*rose*/, 0xffffff/*white*/]
-  public colorStone:number[] = [0xb9e9ff/*Diamand*/, 0x003500/*emerald*/, 0xFF0101/*ruby*/, 0x0101FF/*sapphire*/]
+```public colorMetal:number[] = [0xb3b3b3 /*silver*/, 0xcba135/*gold*/, 0xee918d /*rose*/, 0xffffff/*white*/] ```
+```public colorStone:number[] = [0xb9e9ff/*Diamand*/, 0x003500/*emerald*/, 0xFF0101/*ruby*/, 0x0101FF/*sapphire*/] ```
+ 
 
 In the begining, we used some texture.jpeg files for all texture but for some reason, hexadecimal numbers display better.
 Each model has meshs who correspond to a part of model like stone part, metal part. When the customer change the color, its change actually diffent kind of meshs, all model has different meshs,
 the colors display is adapte for each model.
+```public metalMaterialParam = new MeshStandardMaterial({color: new THREE.Color(this.colorMetal[1]),metalness: 0.95, roughness: 0.4 }) ```
+  
 
-   color: new THREE.Color(this.colorMetal[1]),
-    metalness: 0.95,
-    roughness: 0.4
-  })
-
-  public stoneMaterialParam = new MeshStandardMaterial({
-    color: new THREE.Color(this.colorStone[2]),
-    metalness: 1,
-    transparent: true,
-    opacity: 0.87,
-    roughness: 0.4
-  })
+  ```public stoneMaterialParam = new MeshStandardMaterial({color: new THREE.Color(this.colorStone[2]),metalness: 1,transparent: true,opacity: 0.87,roughness: 0.4}) ```
+ 
 
   Some other feature like metalness or roughness make the model more realistic.
   All choice of customers can display on the 3D model and switch between them for compare all kind of posibility and find customisation the customer expected.
@@ -82,10 +75,16 @@ the colors display is adapte for each model.
 
  
 ### - Form
-
+This part is initially for record contact details and the request of customer and send it by email confirmation of purchase.
+In the feature, we add a model donwload if the customer want to save
 ## 5. Improvement
-
+Some improvemnt is possible especially on optimisation but some effort are doing on ergonomic feature and attractive interface. 
 ## 6. Conclusion
+Despite some troble especially on framework choice and using effectively THREE.JS technologie, the redering of the project is a quite pretty good, even some more details and experience on app developpement (especially web app), we learn so much for example using Angular framework, THREE.JS . Some part of this project can be usefull for next project like the previous point and the management of Beta groupe.  
+
+
+
+ 
 
 
 
