@@ -60,9 +60,8 @@ img {
     align-items: center;
     flex-direction: column;
     text-decoration: none;
-    color: transparent;
+    color: black;
     border-bottom: 4px solid #000000;
-    text-shadow: 0px -2px #000000;
     transition: all 0.1s;
     -webkit-transition: all 0.1s;
   }
@@ -75,7 +74,7 @@ img {
   .box:focus {
   
     background-color: rgb(190, 190, 190);
-    color: aliceblue;
+    color: black;
   }
   
   
