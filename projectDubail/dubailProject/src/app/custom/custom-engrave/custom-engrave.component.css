@@ -102,4 +102,12 @@ img {
   width: 100%;
 }
 
+/*slider*/
+.sliderz{
+  width: 100%;
+    display: inline-grid;
+    align-content: center;
+    align-items: center;
+}
+
 
