@@ -5,7 +5,9 @@ body {
   overflow: hidden;
   font-family: "Fira Sans", sans-serif;
 }
-
+a{
+  text-decoration: none;
+}
 input {
   display: none;
 }

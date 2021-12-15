@@ -16,7 +16,6 @@ export class CustomEngraveComponent implements OnInit {
 
     slider!.oninput = function() {  
     output!.innerHTML = slider.value;
-}
+    }
   }
-
 }
