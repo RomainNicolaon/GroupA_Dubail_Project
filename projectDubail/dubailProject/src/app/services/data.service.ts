@@ -23,6 +23,20 @@ export class DataService {
     this.invokeMetalFunction.emit(index);
   }
 
+  invokeScreenshotFunction = new EventEmitter();
+  subsScreenshot!: Subscription;
+
+  onScreenshotClick() {
+    this.invokeScreenshotFunction.emit();
+  }
+
+  invokePassScreenshotFunction = new EventEmitter();
+  subsPassScreenshot!: Subscription;
+
+  onPassScreenshotClick(img:string) {
+    this.invokePassScreenshotFunction.emit(img);
+  }
+
   reload$(){ //need to reload the page otherwise canvas bug
     setTimeout(() => {window.location.reload()},2)
   }

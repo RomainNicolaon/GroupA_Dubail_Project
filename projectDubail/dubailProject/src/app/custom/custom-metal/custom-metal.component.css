@@ -43,6 +43,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
+    margin-left: 10%;
     margin-top: 2%;
     justify-content: center;
   }
@@ -68,8 +69,6 @@ img {
     background-color: rgb(190, 190, 190);
     color: aliceblue;
   }
-  
-  
   
   .imgMetal {
     height: 50%;

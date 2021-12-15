@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from 'src/app/data.service';
+import { DataService } from 'src/app/services/data.service';
 import * as THREE from 'three';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { Services3DService } from '../services3-d.service';
@@ -82,6 +82,10 @@ export class NecklaceComponent implements OnInit {
     this.service3D.stoneMaterialParam.color = new THREE.Color(this.service3D.colorStone[index])
   }
 
+  Print() {
+    this.dataService.onPassScreenshotClick(this.canvas!.toDataURL())
+  }
+
   ngOnInit() { /**/
     if (this.dataService.subsVarStone == undefined) {
       this.dataService.subsVarStone = this.dataService.
@@ -93,6 +97,12 @@ export class NecklaceComponent implements OnInit {
       this.dataService.subsVarMetal = this.dataService.
         invokeMetalFunction.subscribe((indexMetal: number) => {
           this.metal(indexMetal)
+        });
+    }
+    if (this.dataService.subsScreenshot == undefined) {
+      this.dataService.subsScreenshot = this.dataService.
+        invokeScreenshotFunction.subscribe(() => {
+          this.Print()
         });
     }
   }

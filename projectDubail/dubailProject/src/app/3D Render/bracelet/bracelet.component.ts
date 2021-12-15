@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from 'src/app/data.service';
+import { DataService } from 'src/app/services/data.service';
 import * as THREE from 'three';
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { Services3DService } from 'src/app/3D Render/services3-d.service'
@@ -15,7 +15,7 @@ export class BraceletComponent implements OnInit {
   private canvasRef: ElementRef | undefined;
 
   constructor(private dataService: DataService, public router: Router, private service3D: Services3DService
-    ) { }
+  ) { }
 
   public JewelIndex: number = 3
 
@@ -59,7 +59,7 @@ export class BraceletComponent implements OnInit {
   }
 
   private startRenderingLoop() {
-    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
+    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas,  preserveDrawingBuffer: true });
     this.renderer.setPixelRatio(devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
 
@@ -70,7 +70,7 @@ export class BraceletComponent implements OnInit {
     }());
 
     let controls = new OrbitControls(this.camera, this.renderer.domElement);
-    this.service3D.loadModel(this.JewelIndex, this.jewel, this.camera,this.scene)
+    this.service3D.loadModel(this.JewelIndex, this.jewel, this.camera, this.scene)
     controls.update()
   }
 
@@ -80,6 +80,10 @@ export class BraceletComponent implements OnInit {
 
   stone(index: number) { /**/
     this.service3D.stoneMaterialParam.color = new THREE.Color(this.service3D.colorStone[index])
+  }
+
+  Print() {
+    this.dataService.onPassScreenshotClick(this.canvas!.toDataURL())
   }
 
   ngOnInit() { /**/
@@ -93,6 +97,12 @@ export class BraceletComponent implements OnInit {
       this.dataService.subsVarMetal = this.dataService.
         invokeMetalFunction.subscribe((indexMetal: number) => {
           this.metal(indexMetal)
+        });
+    }
+    if (this.dataService.subsScreenshot == undefined) {
+      this.dataService.subsScreenshot = this.dataService.
+        invokeScreenshotFunction.subscribe(() => {
+          this.Print()
         });
     }
   }

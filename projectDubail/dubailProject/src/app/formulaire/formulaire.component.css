@@ -3002,3 +3002,13 @@ input:checked+label .button_spots:nth-of-type(60) {
     transform: scale(1) rotate(-90deg);
   }
 }
+
+.box{
+  width: 20em;
+  height: 20em;
+  background-color: white;
+  
+  }
+  .box > img {
+  width: 100%;
+  }

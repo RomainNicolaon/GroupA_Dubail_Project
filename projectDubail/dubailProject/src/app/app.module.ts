@@ -12,7 +12,7 @@ import { CustomMetalComponent } from './custom/custom-metal/custom-metal.compone
 import { CustomStoneComponent } from './custom/custom-stone/custom-stone.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { CustomEngraveComponent } from './custom/custom-engrave/custom-engrave.component';
-import { DataService } from './data.service';
+import { DataService } from './services/data.service';
 import { RingComponent } from './3D Render/ring/ring.component';
 import { EarringComponent } from './3D Render/earring/earring.component';
 import { NecklaceComponent } from './3D Render/necklace/necklace.component';

@@ -70,7 +70,6 @@ export class Services3DService {
       case 1:
         for (let i = 0; i < children.length; i++) { //For the necklace
           if (i == 0) {
-            console.log('here 1')
             children[i].material = this.stoneMaterialParam;
             continue;
           }
@@ -80,7 +79,6 @@ export class Services3DService {
       case 2:
         for (let i = 0; i < children.length; i++) { //For the earring
           if (i == 0 || i == 1) {
-            console.log('here 2')
             children[i].material = this.stoneMaterialParam;
             continue;
           }
@@ -92,7 +90,6 @@ export class Services3DService {
       case 3:
         for (let i = 0; i < children.length; i++) { //For the bracelet
           if (i == 9 || i == 8) {
-            console.log('here 3')
             children[i].material = this.stoneMaterialParam;
             continue;
           }
@@ -101,8 +98,7 @@ export class Services3DService {
         break;
       default:
         for (let i = 0; i < children.length; i++) { //For the ring 
-          if (i == 1) {
-            console.log('here 0')                   // Needs to be changed per model
+          if (i == 1) {                // Needs to be changed per model
             children[i].material = this.stoneMaterialParam;
             continue;
           }
