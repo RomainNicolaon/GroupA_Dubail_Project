@@ -87,23 +87,7 @@ body{
     height: 100%;
     width: 100%;
   }
-  .slideFinger{
-    width: 20%;
-    margin-left: 40%;
-    animation: Swipe 2s ease 0s infinite normal forwards;
-  }
-  @keyframes Swipe {
-    0% {
-      transform: translateX(50px);
-    }
-  
-    50% {
-      transform: translateX(-50px);
-    }
-    100%{
-      transform: translateX(50px);
-    }
-  }
+
   .placement_carousel{
     margin-top: 20%;
   }
@@ -287,4 +271,186 @@ body{
         transform: rotate(135deg) translate(10px,10px);
     }
 }
+svg {
+	display: inline-block;
+	width: 70px;
+	margin: 3% auto;
+  margin-left: 20%;
+}
+
+/* SVG RULES */
+
+.hand, 
+.hand-double, 
+.hand-flick, 
+.hand-hold, 
+.hand-rock, 
+.hand-tap, 
+.hand-x, 
+.hand-y {
+	fill: #fff;
+	stroke: #000;
+	stroke-width: 3px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.arrow-down, 
+.arrow-head, 
+.arrow-left, 
+.arrow-right, 
+.arrow-up, 
+.arrow-up-1, 
+.arrow-up-2, 
+.arrow-up-3,   
+.hold-1,
+.hold-2, 
+.line-horizontal, 
+.line-rotate, 
+.line-vertical, 
+.notes, 
+.tap-1, 
+.tap-2 {
+	fill: transparent;
+	stroke: #000;
+	stroke-width: 3px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.arrow-up-2, 
+.hold-1, 
+.tap-1 {
+	opacity: .5;
+}
+
+.arrow-up-1, 
+.hold-2, 
+.tap-2 {
+	opacity: .25;
+}
+
+.arrow-up-3, 
+.swipe-horizontal, 
+.swipe-rotate, 
+.swipe-vertical {
+	opacity: .75;
+}
+
+.hold-1, 
+.hold-2, 
+.notes {
+	opacity: 0;
+}
+
+/* ANIMATION KEYFRAMES */
+
+
+
+@keyframes tap {
+	0% {
+		transform: rotateX(0deg);
+	}
+	10% {
+		transform: rotateX(12.5deg);
+	}
+	25% {
+		transform: rotateX(25deg);
+	}
+}
+
+@keyframes tap-circle {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	75% {
+		transform: scale(1.05);
+		opacity: .6;
+	}
+	80% {
+		transform: scale(1);
+		opacity: .5;
+	}
+}
+
+@keyframes swipe-x {
+	0% {
+		transform: translateX(0px);
+	}
+	25% {
+		transform: translateX(50px) rotateZ(10deg);
+	}
+	50% {
+		transform: translateX(0px);
+	}
+	75% {
+		transform: translateX(-50px) rotateZ(-10deg);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* SVG ANIMATION */
+
+.wrapper * {
+	transform-origin: 50% 50%;
+	perspective: 100px;
+  
+}
+
+.hand {
+	transform-origin: 25% 50%;
+}
+
+.hand-tap {
+	animation: tap 1.25s ease-out backwards;
+	animation-iteration-count:infinite;
+}
+
+.hand-double {
+	animation: tap-double 1.25s ease-out backwards;
+	animation-iteration-count:infinite;
+}
+
+.tap-1,
+.tap-2 {
+	animation: tap-circle 1.25s ease-out backwards;
+	animation-iteration-count:infinite;
+}
+
+.hand-hold {
+	animation: hold 1.25s ease-out backwards;
+	animation-iteration-count:infinite;
+}
+
+.hold-1, .hold-2 {
+	animation: fade 1.25s ease-in backwards;
+	animation-iteration-count:infinite;
+}
+
+.tap-2 {
+	animation-delay: 0.2s;
+}
+
+.hand-x {
+	animation: swipe-x 1.25s ease-in-out backwards;
+	animation-iteration-count:infinite;
+}
+
+.hand-y {
+	animation: swipe-y 1.25s ease-in-out backwards;
+	animation-iteration-count:infinite;
+}
  
+.hand-flick {
+	animation: flick 1.25s ease-out backwards;
+	animation-iteration-count:infinite;
+}
