@@ -180,7 +180,7 @@ The welcome page has been deleted because the team managers didn't want to keep 
 
 ### - Jewel Page
 
-We made a carrousel with html and css. No js required. For this carrousel, we took images photoshoped by the Alpha team. These images represent each jewel.
+We made a carrousel with html and css. No js required. For this carrousel, we took images modified with photoshop by the Alpha team. These images represent each jewel.
 They have two animations the first to show how to slide on this carousel.
 
 ```css
@@ -298,7 +298,7 @@ body{
 }
 ```
   
-For the header we decided to use the svg of the Dubail site on a black background to have the same colours as their site.the logo is centred in the middle of the page and the class cls-1 is the class for the colour of the letters in the svg. We set the padding and margin to auto because it allows the header to take the full width of the application.However, after three weeks of work it was decided that the header was not necessary for the all page on application. After that it was change by the Alpha Team to take less place on the screen
+For the header we decided to use the svg of the Dubail site on a black background to have the same colors as their site. The logo is centred in the middle of the page and the class cls-1 is the class for the color of the letters in the svg. We set the padding and margin to auto because it allows the header to take the full width of the application. However, after three weeks of work, it was decided to remove the header for the all page on application. After that it was change by the Alpha Team to take less place on the screen
 
 #### Footer
 
@@ -333,13 +333,13 @@ nav>a{
 
 ```
 
-For the footer we decided to link to the Dubail App's "Boutiques, Service and mention Legal" pages on a black background to match the colours of their site.the footer is always at the bottom of the application.However, after three weeks of work it was decided that the footer was not necessary for all pages on the application.After that it was change by the Alpha team the footer became a drop-down menu on the header.
+For the footer we decided to link to the Dubail "Boutiques, Service and mention Legal" pages on a black background to match the colors of their site. The footer is always at the bottom of the application. However, after three weeks of work it was decided that the footer was not necessary for all pages on the application. After that it was change by the Alpha team the footer became a drop-down (hamburger) menu on the header.
 
 ### - Custom Pages
 
 For the customization of the different jewels we need different pages that allow to change the colour of the metal, the colour of the stone and to add a potential engraving.
 
-The first page you come to after choosing the jewel is the page for choosing the metal. We decided to do this because it seemed the most logical.
+The first page you can see after choosing the jewel is the page for choosing the metal. We decided to do this because it seemed the most logic choice.
 
 ```html
 <body>
@@ -380,7 +380,7 @@ Below we have the body of our first page.
 In this one we have two divs, the first one containing the navigation buttons and the second one containing the buttons for the different metal choices.
 There is also an image that helps us to get an overview of the page with a potential 3D model.
 
-For this app many bootstrap classes have been used to facilitate the responsive of the app. 
+For this app, many bootstrap classes have been used to facilitate the responsive of the app. 
 
 ```css
 /* Change the font of any text of the page     */
