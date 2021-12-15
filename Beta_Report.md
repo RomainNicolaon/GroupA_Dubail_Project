@@ -228,7 +228,7 @@ they have two animations the first to show how to slide on this carousel.
 }
 ```
 
-The second animation is for the carousel the images change automatically.
+The second animation is for the carousel images can change automatically.
 
 ```css
 @keyframes tonext {
@@ -479,7 +479,204 @@ This is the div that changes from the other pages. This one contains the text bo
 Of course, the user can browse the different pages as he ​wishes. When he is satisfied with his result he presses the confirm button which will open the form.
 
 ### - Form Page
-cq
+
+Once the jewel is customized, the goal is for the user to enter his personal information in different fields in order to be able to validate his customization. We decided to create a form to meet these expectations.
+
+#### The HTML part
+----
+
+* We started by telling the user which fields must be filled to validate his/her custom(s) by a simple text "* Champs requis".
+All " * " are in the color red to allow the user to see them better.
+Then, we created a "div" in order to contain all the fields that the user can fill, then different "div", smaller to contain and can modified more easily the "input"... In addition, we add the style "white-space: pre" to replace "<*br*>".
+We also have created different "input", with different specificities like the "id" for the name, the "type" for the type of text enter (text, phone, time...), required or not, max lenght of the input enter, the size of the text box...
+The "placehorder" give an example to the user of what he/her must enter.
+The "form" is used to collect all user input. 
+
+```html
+<body>
+  <div>
+    <p><span style="color: red;">*</span> Champs Requis</p>
+    <form action="#contact" method="post" id="form">
+    <div class="case" style="white-space: pre">
+      <label for='name'>Nom</label><span style="color: red;">*</span>
+      <input type="text" size="27" maxlength="50" id="surname" required placeholder="Gaël" />
+    </div>
+    <div class="case" style="white-space: pre">
+      <label for='prenom'>Prénom</label><span style="color: red;">*</span>
+      <input type="text" size="27" maxlength="50" id="first_name" required placeholder="Lebrun"/>
+    </div>
+    <div class="case" style="white-space: pre">
+      <label for='mail'>Mail</label><span style="color: red;">*</span>
+      <input type="text" size="27" id="e-mail" required placeholder="gaël.lebrun@exemple.com" />
+    </div>
+```
+
+* For the input "phone", we chose to be able to enter only numbers and some characters like "(" ;  ")" ; " - "... very useful for some phone numbers.
+
+```html 
+<div class="case" style="white-space: pre">
+    <label for='phone'>Téléphone</label><span style="color: red;">*</span>
+    <input type="tel" size="21" id="phone" onkeypress="return event.charCode >= 40 &&  event.charCode <= 57"
+      required />
+</div>
+```
+
+* You can choose the telephone code by selecting the flag for it. Additionally, you can find a placehorder for each nationality, to know what is expected.
+As the Alphas had to use Angular, they could not keep the code in js.
+
+```html
+<div class="case" style="white-space: pre">
+    <label for='phone'>Téléphone</label><span style="color: red;">*</span>
+    <input type="tel" size="21" id="phone" onkeypress="return event.charCode >= 40 &&  event.charCode <= 57"
+      required />
+    <script src="formulaire.js"></script>
+</div>
+```
+
+```js
+var input = document.querySelector("#phone");
+intlTelInput(input, {
+  initialCountry: "fr",
+  geoIpLookup: function (success, failure) {
+    $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
+      var countryCode = (resp && resp.country) ? resp.country : "us";
+      success(countryCode);
+    });
+  },
+});
+```
+
+* The "text box" allows the user to add a message with no character limit. It is easier to set than an "input" in terms of size, which is why we prefer it here.
+
+```html
+<div class="case" style="white-space: pre">
+   <label>Ajouter un message </label>
+   <textarea cols="31" rows="5" type="text" id="message"></textarea>
+</div>
+```
+
+* The first button allows the user to start his custom again if he is not satisfied or simply if he has changed his mind. The second opens the mailbox with Antonin as recipient, for example, with the title of the order number and the summary sentence. As the alphas set this with Angular, it just serves as an example. We also find all tag closures as this is the end of the form for the html part.
+
+```html
+      <div class="case">
+        <button class="btn" id="Recommencer" href="bijou.html">Recommencer</button>
+        <button class="btn" id="Envoyer"
+          href="mailto:antopillet18@gmail.com? subject=Commande n°000001Dubail&body=Bonjour,  %0D%0A%0D%0ACi-joint le récapitulatif de votre  commande:">Envoyer</button>
+      </div>
+    </form>
+  </div>
+</body>
+```
+
+* Thanks to these links, we can display all the flags, have a cohesive placehorder and be linked to the css.
+
+```html
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.min.js"></script>
+  <link rel="stylesheet" href="formulaire.css">
+```
+
+####The CSS part
+
+---
+
+
+* For the css part, we started by setting the whole with the body. The "font-family" allows us to choose the font, which is Arial here. The "zoom" is useful for the phone format. The "margin" provides us to put, here, all the content, where we want. Also, we changed the background color (base white by a gradient from grey to white, more "user friendly"), and we had align the text in the center of the form.
+
+```css
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    zoom:235%;
+    margin-top: 15%;
+    margin: auto;
+    background: linear-gradient(lightgrey, rgb(250, 250, 250));
+    text-align: center;
+}
+```
+
+* For all the input, we just wanted to have the border on the bottom of the text to give something "more modern". We put a transparant background to have the same color as the background.
+
+```css
+input {
+    border: none;
+    border-bottom: solid;
+    border-width: 1px;
+    background-color: transparent;
+}
+
+input:active {
+    border: none;
+}
+```
+
+* We changed the borders for the text area, notably by adding edges to the corners, making the borders thicker, and putting the background also transparent.
+
+```css
+textarea {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+```
+
+* Here we just readjust all the divs, which were wagered in class "case".
+
+```css
+.case {
+    margin-bottom: 15px;
+}
+```
+
+* For all the "p", we aligned the text to the left, and we shifted it a little bit to the right in order to have something more readable.
+
+```css
+p {
+    text-align: left;
+    margin-left: 10px;
+}
+```
+
+* For the "placehorders", we just have the color to make them more visible, and more "user friendly".
+
+```css
+::placeholder {
+    color: rgba(0, 0, 0, 0.336);
+}
+```
+
+* For the class ". btn", including the "envoyé" and "recommencer" buttons, we changed the size, how they are activated with the "cursor: point", the shadows, the angles by rounding them... For the "recommencer" button, we put it in red to warn the user before clicking while for the "envoyer" button, we put it in green so as not to mislead the user.
+
+```css
+.btn {
+    color: whitesmoke;
+    border: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.008),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.012), 0 12.5px 10px rgba(0, 0, 0, 0.015),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.018), 0 41.8px 33.4px rgba(0, 0, 0, 0.022),
+    0 100px 80px rgba(0, 0, 0, 0.03);
+}
+
+#Envoyer {
+    background-color: rgb(10, 177, 10);
+    box-shadow: 1px 1px 1px 1px #666; 
+}
+
+#Recommencer {
+    background-color: rgb(218, 21, 21);
+    box-shadow: 1px 1px 1px 1px #666; 
+}
+```
 
 ### - Gratitude Page
 
