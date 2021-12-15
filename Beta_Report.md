@@ -52,7 +52,7 @@ During this project we learned and use some technologies to finish the project
 
     - Git
 
-  Centralise by
+  IDE
 
     - visual studio code
 
@@ -106,7 +106,7 @@ setTimeout is use to define the time the user will spend on the page to 3000 mil
 window.location.href is use to redirect the user to bijou.html after the timer.
 
 We had a Dubail logo in .svg.
-We have center the SVG of the Dubail logo by puting it in a container.
+We have centered the SVG of the Dubail logo by puting it in a container.
 
 ```html
 <div class="container">
@@ -176,12 +176,12 @@ The -webkit-animation-iteration-count set the animation only happens once.
 
 The @-moz-keyframes and the @-webkit-keyframes is use to set the opacity, and the fade for the fade animation.
 
-The welcome page has been deleted because the team managers didin't keep it.
+The welcome page has been deleted because the team managers didn't want to keep it.
 
 ### - Jewel Page
 
-We make a carousel with html and css for this carousel we take images photoshop by the Alpha team. these images represent each jewel.
-they have two animations the first to show how to slide on this carousel.
+We made a carrousel with html and css. No js required. For this carrousel, we took images photoshoped by the Alpha team. These images represent each jewel.
+They have two animations the first to show how to slide on this carousel.
 
 ```css
 
