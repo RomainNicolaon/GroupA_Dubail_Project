@@ -1,3 +1,4 @@
+/* to next is the animation to the next image */
 @keyframes tonext {
     75% {
       left: 0;
@@ -12,7 +13,7 @@
       left: 0;
     }
   }
-  
+  /* animation at the start with each image */
   @keyframes tostart {
     75% {
       left: 0;
@@ -42,7 +43,7 @@
       scroll-snap-align: center;
     }
   }
-  
+  /* body of the all page jewel */
   body {
     width: 100%;
     height: 100vh;
@@ -52,7 +53,7 @@
     font-family: 'Cormorant Infant', serif;
   }
 
-
+/* a for the link is for take all image on the link */
   a{
     text-decoration: none;
     color: white;
@@ -129,20 +130,21 @@
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
   }
-  
+  /* make the position of the carousel */
   .carousel__slide {
     position: relative;
     flex: 0 0 100%;
     width: 100%;
     counter-increment: item;
   }
-  
+  /* first image of the carousel */
   .carousel__slide:nth-child(1) {
     background-image: url(img/baguee.png);
     background-position: center ;
     background-repeat: no-repeat;
     background-size:contain;
   }
+  /* second image of the carousel */
   .carousel__slide:nth-child(2) {
     background-image: url(img/colliertorse.png);
     background-position: center ;
@@ -150,6 +152,7 @@
     background-size: contain;
 
   }
+  /* third image of the carousel */
   .carousel__slide:nth-child(3) {
     background-image: url(img/braceletpresentoire.png);
     background-position: center ;
@@ -157,6 +160,7 @@
     background-size: contain;
 
   }
+  /* fourth image of the carousel */
   .carousel__slide:nth-child(4) {
     background-image: url(img/bouclepresentoire\.png);
     background-position: center ;
@@ -164,7 +168,7 @@
     background-size: contain;
 
   }
-  
+  /* make animation between the slide before */
   .carousel__slide:before {
     position: absolute;
     top: 50%;
@@ -188,7 +192,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+  /*  animation to the next or previous slide on the carousel  */
   @media (hover: hover) {
     .carousel__snapper {
       animation-name: tonext, snap;
@@ -207,7 +211,7 @@
       animation-name: none;
     }
   }
-  
+  /* css for the view of this < */
   .box{
     left: 45%;
     position: relative;
@@ -235,10 +239,7 @@
     transform: rotate(135deg);
 
 }
-
-
-
-
+/* css for the view of this < */
 @keyframes animate{
     0%{
         opacity: 0;
@@ -252,3 +253,46 @@
         transform: rotate(135deg) translate(10px,10px);
     }
 }
+/* background at the top and center the svg of dubail*/
+header{
+  background-color: black;
+  text-align: center;
+  height: 100px;
+}
+/* margin:auto && padding:auto to place the header */
+body{ 
+  padding: auto;
+  margin: auto;   
+  background: linear-gradient(lightgrey, rgb(250, 250, 250));
+} 
+.cls-1 {
+  fill: #fff;
+}
+/* delete the point for the link on the footer */
+a{
+  text-decoration: none;
+}
+nav>a:hover{
+  color :white;
+}
+/* make space and the display flex to align the footer    */
+nav.container{
+display: flex;
+justify-content: space-between;
+
+}
+/* color the link on white on the footer */
+nav>a{
+color:white;
+}
+/* make the background on the footer on black with the same writting style than dubail and make the footer always at the bottom of the page */
+.footer{
+position: fixed;
+font-family: 'Cormorant Infant', serif;
+bottom: 0%;
+width: 100%;
+background-color: black;
+height: 5%;
+color:white; 
+display: flex;
+} 

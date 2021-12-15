@@ -116,5 +116,19 @@ styling image of metal */
   margin-top: 5%;
   border-radius: 10%;
 }
-
+/* background at the top and center the svg of dubail*/
+header{
+  background-color: black;
+  text-align: center;
+  height: 100px;
+}
+/* margin:auto && padding:auto to place the header */
+body{ 
+  padding: auto;
+  margin: auto;   
+  background: linear-gradient(lightgrey, rgb(250, 250, 250));
+} 
+.cls-1 {
+  fill: #fff;
+}
 
