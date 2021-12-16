@@ -47,29 +47,53 @@ Team manager: [Brendon Desvaux](https://github.com/BrendonDesvaux)
 Tech lead: [Max Bernard](https://github.com/maxbernard3)
 
 When the project began, we had to complete the project brief followed by the technical and functional requierements.
+
 We decided what we had to focus on first. Since that creating an app and publishing it to the google play store was something new, we decided to focus first on that.
+
 The second point was: 3D rendering. Something new too.
+
 We had Angular courses so the front part was less important.
 
+
 We said to the Beta to create Mockups using [Balsamiq](https://balsamiq.com). This tool allowed them to create interactives mockups.
-During this time, Max and I were looking for 3D rendering. We found mutiple solutions such as [BabylonJS](https://www.babylonjs.com) or [ThreeJS](https://threejs.org).
+
+During this time, Max and I were looking for 3D rendering. 
+We found mutiple solutions such as [BabylonJS](https://www.babylonjs.com) or [ThreeJS](https://threejs.org).
+
 After few tries, we decided that three.js was faster, stronger, better.
+
 ThreeJS has [OrbitControls](https://threejs.org/docs/#examples/en/controls/OrbitControls) included. We had our camera movements.
+
 At this time, all we had to do was to find a 3D model loader. Some web researches after, we found [GLTFLoader](https://threejs.org/docs/#examples/en/loaders/GLTFLoader)inside ThreeJS. It allowed us to import .GLTF 3D models. (GLTF is an extension such as STL, 3DS, OBJ...)
+
 We downloaded free 3D models and made it works.
 
 Once this was over, we gave it to Eloi and Salah so they can transfer it in TS hyelped by Max. On the npm website, we were able to find [THREE.JS]https://www.npmjs.com/package/@types/three, [OrbitControl.ts](https://www.npmjs.com/package/@three-ts/orbit-controls) and [GLTFLoader.ts](https://www.npmjs.com/package/three-gltf-loader).
 
 The mockup were never validated because the client had problems but we couldn't just wait to start developing the product.
-During this time, Romain had the mission to look for engravement and deploying on google store. He showed us how hard the engravement would have been so we decided to make him concentrate on deploying the app on the Google Store using [angular/PWA](https://angular.io/guide/service-worker-getting-started#adding-a-service-worker-to-your-project)(PWA stands for Progressive Web APP).
+
+During this time, Romain had the mission to look for engravement and deploying on google store.
+
+He showed us how hard the engravement would have been so we decided to make him concentrate on deploying the app on the Google Store using [angular/PWA](https://angular.io/guide/service-worker-getting-started#adding-a-service-worker-to-your-project)(PWA stands for Progressive Web APP).
+
 The Beta team then started to code a mobile first website in HTML/CSS/JS from scratch.
 
+
 Beta Team was almost done finishing the front after 2 weeks. We decided that, because they were learning fast, they should also learn [Bootstrap](https://getbootstrap.com) which they did good.
+
 ThreeJS conversion to TS was over so they started to work on meshes and textures.
-We manage to put Beta team's code in angular while Romain was stuggling with the PWA. We decided then to switch tech and go for [Ionic](https://ionicframework.com) and [capacitor](https://capacitorjs.com). Both of them are technologies made to create applications. Then, he had problems with [Android Studio](https://developer.android.com/studio) and Gradle. He lost the APK/AAB key so wasn't able to release a new version of the app.
+
+We manage to put Beta team's code in angular while Romain was stuggling with the PWA. We decided then to switch tech and go for [Ionic](https://ionicframework.com) and [capacitor](https://capacitorjs.com).Both of them are technologies made to create applications. 
+
+Then, he had problems with [Android Studio](https://developer.android.com/studio) and Gradle.
+
+He lost the APK/AAB key so wasn't able to release a new version of the app.
+
 After a lot of efforts, he managed to upload our first app on the Google Store. Not the final app but at least something.
 
-The client went to see us so we had to occasion for a demo. They told us to add swipe and to make the buttons of the app more "Sexy". We understood the point and changed the "choose your jewel" page to make it a slider. Beta team was in charge of doing it.
+The client went to see us so we had to occasion for a demo. 
+They told us to add swipe and to make the buttons of the app more "Sexy". 
+We understood the point and changed the "choose your jewel" page to make it a slider. Beta team was in charge of doing it.
 We made the buttons "sexier" and modified little things they asked.
 
 We finally decided to put merge all the code on Ionic for a better compatibility and for faster results since we were not going for a pwa. 
