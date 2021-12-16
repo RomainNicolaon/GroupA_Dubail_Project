@@ -37,8 +37,41 @@ The Beta group have been managed by the Alpha group. They worked on the User Int
 
 However, Alphas worked on the Angular Project and 3D models of jewel which represent the requested product of customers.
 The main goal is to offer our client an app with the customization of a jewel displayed in 3D which let them visualize perfectly what they're creating.
+# 2. Management
 
-# 2. Technologies Used
+Team manager:[Brendon Desvaux](https://github.com/BrendonDesvaux)
+
+Tech lead: [Max Bernard](https://github.com/maxbernard3)
+
+When the project began, we had to complete the project brief followed by the technical and functional requierements.
+We decided what we had to focus on first. Since that creating an app and publishing it to the google play store was something new, we decided to focus first on that.
+The second point was: 3D rendering. Something new too.
+We had Angular courses so the front part was less important.
+
+We said to the Beta to create Mockups using [Balsamiq](https://balsamiq.com). This tool allowed them to create interactives mockups.
+During this time, Max and I were looking for 3D rendering. We found mutiple solutions such as [BabylonJS](https://www.babylonjs.com) or [ThreeJS](https://threejs.org).
+After few tries, we decided that three.js was faster, stronger, better.
+ThreeJS has [OrbitControls](https://threejs.org/docs/#examples/en/controls/OrbitControls) included. We had our camera movements.
+At this time, all we had to do was to find a 3D model loader. Some web researches after, we found [GLTFLoader](https://threejs.org/docs/#examples/en/loaders/GLTFLoader)inside ThreeJS. It allowed us to import .GLTF 3D models. (GLTF is an extension such as STL, 3DS, OBJ...)
+We downloaded free 3D models and made it works.
+
+Once this was over, we gave it to Eloi and Salah so they can transfer it in TS hyelped by Max. On the npm website, we were able to find [THREE.JS]https://www.npmjs.com/package/@types/three, [OrbitControl.ts](https://www.npmjs.com/package/@three-ts/orbit-controls) and [GLTFLoader.ts](https://www.npmjs.com/package/three-gltf-loader).
+
+The mockup were never validated because the client had problems but we couldn't just wait to start developing the product.
+During this time, Romain had the mission to look for engravement and deploying on google store. He showed us how hard the engravement would have been so we decided to make him concentrate on deploying the app on the Google Store using [angular/PWA](https://angular.io/guide/service-worker-getting-started#adding-a-service-worker-to-your-project)(PWA stands for Progressive Web APP).
+The Beta team then started to code a mobile first website in HTML/CSS/JS from scratch.
+
+Beta Team was almost done finishing the front after 2 weeks. We decided that, because they were learning fast, they should also learn [Bootstrap](https://getbootstrap.com) which they did good.
+ThreeJS conversion to TS was over so they started to work on meshes and textures.
+We manage to put Beta team's code in angular while Romain was stuggling with the PWA. We decided then to switch tech and go for [Ionic](https://ionicframework.com) and [capacitor](https://capacitorjs.com). Both of them are technologies made to create applications. Then, he had problems with [Android Studio](https://developer.android.com/studio) and Gradle. He lost the APK/AAB key so wasn't able to release a new version of the app.
+After a lot of efforts, he managed to upload our first app on the Google Store. Not the final app but at least something.
+
+The client went to see us so we had to occasion for a demo. They told us to add swipe and to make the buttons of the app more "Sexy". We understood the point and changed the "choose your jewel" page to make it a slider. Beta team was in charge of doing it.
+We made the buttons "sexier" and modified little things they asked.
+
+We finally decided to put merge all the code on Ionic for a better compatibility and for faster results since we were not going for a pwa. 
+
+# 3. Technologies Used
 
 On this project, we used some softwares to develop and manage it:
 GitHub is useful to host our repository, push and pull some features from and to everyone in the team.
@@ -64,7 +97,7 @@ Photoshop was used in this project to help with the User Interface. We used it t
 Blender is a 3D modeling software that was really important for the development of the app. We used it to test our 3d models, test the textures and parameters and to import the models to a .gltf/.glb file.
 
 
-# 3. GitHub
+# 4. GitHub
 
 On GitHub repository, we have 3 branches: main, save and test.
 Most features are commit on test branch.
@@ -74,31 +107,9 @@ Most features are commit on test branch.
 Render is used by the Beta Group. It is used for the interface of the app. This part used HTML, CSS and JavaScript. App is designed like web site pages.
 ProjectDubail is actually an Angular app made by the Alpha Group. Combined with THREE.JS, Angular can display 3D model very well and it's useful for the app feature in TypeScript.
 
-# 4. Angular App
+# 5. Angular App
 
 We develop our app on Angular. Initially, we didn't use Angular, but because of the functionalities and the fact that this project is actually an android app, we decided to use Angular for our app. It has 4 mains features, to give customer a better experience when they create a jewel.
-
-At a way to communicate between component is needed multiple time in the application. Notably, a way to call a function from another component, as the 3D renders are a different component from the 'Custom' elements. This was achieved by using a service. A function in the first element call the service
-```ts
-this.dataService.onStoneClick(index);
-```
-This would this change would then be noticed by a subscribed function in the service
-```ts
-    onMetalClick(index: number) {
-    this.invokeMetalFunction.emit(index);
-  }
-
-  invokeScreenshotFunction = new EventEmitter();
-  subsScreenshot!: Subscription;
-```
-and finally, the receiving component is subscribed to the service and can then trigger a function
-```ts
-if (this.dataService.subsVarStone == undefined) {
- this.dataService.subsVarStone = this.dataService.invokeStoneFunction.subscribe((indexStone: number) => {
-  this.stone(indexStone)
- });
-}
-```
 
 ### - Jewel selection
 
@@ -235,7 +246,6 @@ roughness: 0.4
         break;
     }
  ```
-
 ### - Form
 
 This part was initially to register the contact details, the request of the customer and send it by email confirmation of purchase but was scrapped.
@@ -245,7 +255,7 @@ A feature was added to complete the app: a donwload button if the customer wants
 <img src="https://cdn.discordapp.com/attachments/765152753894424577/921125106107945020/Screenshot_2021-12-16_at_20.41.42.png" width="270" height="480">
 
 
-# 5. Web to App
+# 6. Web to App
 
 Gradle
 
@@ -262,11 +272,11 @@ Capacitor
 Ionic
 
 
-# 6. Improvement
+# 7. Improvement
 
 Some improvements are possible, especially on optimisation where some efforts are made on making ergonomic features and an attractive interface.
 On the app itself, we have the layout for the customer's choice of the number of gem on their jewel and for the Engravement feature. Unfortunately, we weren't able to make functioning features for the end result.
 
-# 7. Conclusion
+# 8. Conclusion
 
 Despite some trouble especially on framework choices and using effectively THREE.JS technology, the rendering of the project is really user friendly, we learned  a lot with for example: Angular framework, THREE.JS and web developing in general. It was interesting and very useful to manage the Beta group.  
