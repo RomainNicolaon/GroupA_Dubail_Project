@@ -1,13 +1,19 @@
 # GroupA_Dubail_Project
 
+##Project Name:
 
-Droits d’auteurs et informations sur la licence.
+**DubaiI Creation**
+
 ##Introduction:
-The project is an App for Android asked by a French Jewelery.
+
+The project is an App for Android asked by a French Jewelery [DubaiL](https://www.dubail.fr/fr/joaillerie-dubail). They want to renew the brand with new technologies.
 
 ## Project progress:
+
 Project is done at 90%. We are missing engravement on jewel and how to add ornaments.
+
 ## How to install it and run it
+
 The project is using [![made-with-Ionic](https://img.shields.io/badge/Ionic-498AFF.svg)](https://ionic.io). 
 
 First of all, you have to navigate to the project directory in a terminal like so:
