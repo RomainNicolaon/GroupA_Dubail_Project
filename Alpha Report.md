@@ -27,9 +27,10 @@ Group A Project Report
 
 ---
 ## Technologies' Badges
-[![made-with-javascript](https://img.shields.io/badge/Languages%20Used:-JavaScript-f0db4f.svg)](https://www.javascript.com) [![made-with-Angular](https://img.shields.io/badge/Angular-a6120d.svg)](https://angular.io) [![made-with-Ionic](https://img.shields.io/badge/Ionic-498AFF.svg)](https://ionic.io) [![made-with-TypeScript](https://img.shields.io/badge/TypeScript-007acc.svg)](https://www.typescriptlang.org) [![made-with-ThreeJS](https://img.shields.io/badge/ThreeJS-000000.svg)](https://threejs.org) 
+[![made-with-javascript](https://img.shields.io/badge/Languages%20Used:-JavaScript-f0db4f.svg)](https://www.javascript.com) [![made-with-Angular](https://img.shields.io/badge/Angular-a6120d.svg)](https://angular.io) [![made-with-Ionic](https://img.shields.io/badge/Ionic-498AFF.svg)](https://ionic.io) [![made-with-TypeScript](https://img.shields.io/badge/TypeScript-007acc.svg)](https://www.typescriptlang.org) [![made-with-ThreeJS](https://img.shields.io/badge/ThreeJS-000000.svg)](https://threejs.org) [![made-with-Gradle](https://img.shields.io/badge/Gradle-02303A.svg)](https://gradle.org)
 
-[![made-with-Visual-Studio-Code](https://img.shields.io/badge/Softwares%20Used:-Visual%20Studio%20Code-0078d7.svg)](https://code.visualstudio.com) [![made-with-Android-Studio](https://img.shields.io/badge/Android%20Studio%20-669933.svg)](https://developer.android.com/studio) [![made-with-Gradle](https://img.shields.io/badge/Gradle-02303A.svg)](https://gradle.org)
+[![made-with-Visual-Studio-Code](https://img.shields.io/badge/Softwares%20Used:-Visual%20Studio%20Code-0078d7.svg)](https://code.visualstudio.com) [![made-with-Android-Studio](https://img.shields.io/badge/Android%20Studio%20-669933.svg)](https://developer.android.com/studio) 
+
 # 1. Introduction
 
 This project combined Alpha's and Beta's groups with the goal of creating an android app for Dubail Paris who need a jewel customization app.
@@ -37,9 +38,10 @@ The Beta group have been managed by the Alpha group. They worked on the User Int
 
 However, Alphas worked on the Angular Project and 3D models of jewel which represent the requested product of customers.
 The main goal is to offer our client an app with the customization of a jewel displayed in 3D which let them visualize perfectly what they're creating.
+
 # 2. Management
 
-Team manager:[Brendon Desvaux](https://github.com/BrendonDesvaux)
+Team manager: [Brendon Desvaux](https://github.com/BrendonDesvaux)
 
 Tech lead: [Max Bernard](https://github.com/maxbernard3)
 
