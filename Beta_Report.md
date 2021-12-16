@@ -482,7 +482,7 @@ Of course, the user can browse the different pages as he ​wishes. When he is s
 
 Once the jewel is customized, the goal is for the user to enter his personal information in different fields in order to be able to validate his customization. We decided to create a form to meet these expectations.
 
-#### The HTML part
+##### The HTML part
 ----
 
 * We started by telling the user which fields must be filled to validate his/her custom(s) by a simple text "* Champs requis".
@@ -555,13 +555,12 @@ intlTelInput(input, {
 </div>
 ```
 
-* The first button allows the user to start his custom again if he is not satisfied or simply if he has changed his mind. The second opens the mailbox with Antonin as recipient, for example, with the title of the order number and the summary sentence. As the alphas set this with Angular, it just serves as an example. We also find all tag closures as this is the end of the form for the html part.
+* The first button returns to the jewel page, and it allows the user to start his custom again if he is not satisfied or simply if he has changed his mind. The second opens the gratitude page to confirm the order of the customer. We also find all tag closures as this is the end of the form for the html part.
 
 ```html
-      <div class="case">
-        <button class="btn" id="Recommencer" href="bijou.html">Recommencer</button>
-        <button class="btn" id="Envoyer"
-          href="mailto:antopillet18@gmail.com? subject=Commande n°000001Dubail&body=Bonjour,  %0D%0A%0D%0ACi-joint le récapitulatif de votre  commande:">Envoyer</button>
+     <div class="case" id="buttons">
+        <a href="jewel.html" class="btn" id="Recommencer">Recommencer</a>
+        <a href="gratitude-page.html" class="btn" id="Envoyer">Envoyer</a>
       </div>
     </form>
   </div>
@@ -579,7 +578,7 @@ intlTelInput(input, {
   <link rel="stylesheet" href="formulaire.css">
 ```
 
-####The CSS part
+#####The CSS part
 
 ---
 
@@ -593,11 +592,10 @@ body{
     margin-top: 15%;
     margin: auto;
     background: linear-gradient(lightgrey, rgb(250, 250, 250));
-    text-align: center;
 }
 ```
 
-* For all the input, we just wanted to have the border on the bottom of the text to give something "more modern". We put a transparant background to have the same color as the background.
+* For all the input, we just wanted to have the border on the bottom of the text to give something "more modern". We put a transparant background to have the same color as the background. We had choice to put all the input on the left for a better understanding.
 
 ```css
 input {
@@ -605,6 +603,8 @@ input {
     border-bottom: solid;
     border-width: 1px;
     background-color: transparent;
+    margin-right: 9%;
+    text-align: left;
 }
 
 input:active {
@@ -612,7 +612,7 @@ input:active {
 }
 ```
 
-* We changed the borders for the text area, notably by adding edges to the corners, making the borders thicker, and putting the background also transparent.
+* We changed the borders for the text area, notably by adding edges to the corners, making the borders thicker, and putting the background also transparent. We also put the textarea on the left as the same as the input.
 
 ```css
 textarea {
@@ -620,6 +620,7 @@ textarea {
     border-width: 2px;
     border-radius: 5px;
     background-color: transparent;
+    margin-right: 8%;
 }
 ```
 
@@ -648,33 +649,28 @@ p {
 }
 ```
 
-* For the class ". btn", including the "envoyé" and "recommencer" buttons, we changed the size, how they are activated with the "cursor: point", the shadows, the angles by rounding them... For the "recommencer" button, we put it in red to warn the user before clicking while for the "envoyer" button, we put it in green so as not to mislead the user.
+* For the class ". btn", including the "envoyé" and "recommencer" buttons, we changed the size, how they are activated with the "cursor: point", the shadows, the angles by rounding them... For the "recommencer" button, we put it in red to warn the user before clicking while for the "envoyer" button, we put it in green so as not to mislead the user. The "display : flex", "justify-content: center" and the "align-items: center" are here to put buttons on the center of the page and the word in the button on the center of this one.
 
 ```css
-.btn {
-    color: whitesmoke;
-    border: none;
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    margin: 10px;
-    cursor: pointer;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.008),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.012), 0 12.5px 10px rgba(0, 0, 0, 0.015),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.018), 0 41.8px 33.4px rgba(0, 0, 0, 0.022),
-    0 100px 80px rgba(0, 0, 0, 0.03);
+#buttons {
+    display: flex;
+    margin-left: 9%;
 }
 
 #Envoyer {
     background-color: rgb(10, 177, 10);
     box-shadow: 1px 1px 1px 1px #666; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #Recommencer {
     background-color: rgb(218, 21, 21);
     box-shadow: 1px 1px 1px 1px #666; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 ```
 
