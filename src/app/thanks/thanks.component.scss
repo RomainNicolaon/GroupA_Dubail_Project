@@ -1,0 +1,23 @@
+p {
+    font-family: 'Cormorant Infant', serif;
+    text-align: center;            
+    margin-top: 40%;
+    font-size: 250%;
+}
+
+#button {
+    display: block;
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    background-color: black;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 25%;
+    zoom: 175%;
+    font-family: 'Quicksand', sans-serif;
+        }
+#button:hover {
+    background-color: lightslategray;
+}

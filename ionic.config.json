@@ -1,0 +1,7 @@
+{
+  "name": "ionic-dubail",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

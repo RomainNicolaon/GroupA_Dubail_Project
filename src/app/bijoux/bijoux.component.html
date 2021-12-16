@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="col-md-12">
+    <h2>Choisissez votre Bijou</h2>
+
+    <section class="carousel placement_carousel" aria-label="Gallery">
+        <ol class="carousel__viewport">
+            <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper">
+                    <a routerLink="../ring/metal" (click)="emptyCache()"><span>Bague</span></a>
+                </div>
+            </li>
+            <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper">
+                <a routerLink="../necklace/metal" (click)="emptyCache()"><span>Collier</span></a>
+            </div>
+            </li>
+            <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper">
+                <a routerLink="../bracelet/metal" (click)="emptyCache()"><span>Bracelet</span></a>
+            </div>
+            </li>
+            <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper">
+                <a routerLink="../earring/metal" (click)="emptyCache()"><span>Boucles</span></a>
+            </div>
+            </li>
+        </ol>
+    </section>
+    <br>
+    <img class="slideFinger" src="../../assets/img/finger.png" alt="">
+    <div class="containerText">
+
+        <H2 class="center">Faites défiler <br> pour selectionner votre bijoux</H2>
+
+    </div>
+
+</div>

@@ -1,0 +1,25 @@
+nav.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+nav:nth-child(1){
+    padding-left: 4%;
+}
+nav>a{
+    color:white;
+}
+a{
+    text-decoration: none;
+}
+.footer{
+    position: fixed;
+    font-family: 'Cormorant Infant', serif;
+    bottom: 0%;
+    width: 100%;
+    background-color: black;
+    height: 5%;
+    color:white; 
+    display: flex;
+    } 
