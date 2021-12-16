@@ -78,6 +78,28 @@ ProjectDubail is actually an Angular app made by the Alpha Group. Combined with 
 
 We develop our app on Angular. Initially, we didn't use Angular, but because of the functionalities and the fact that this project is actually an android app, we decided to use Angular for our app. It has 4 mains features, to give customer a better experience when they create a jewel.
 
+At a way to communicate between component is needed multiple time in the application. Notably, a way to call a function from another component, as the 3D renders are a different component from the 'Custom' elements. This was achieved by using a service. A function in the first element call the service
+```ts
+this.dataService.onStoneClick(index);
+```
+This would this change would then be noticed by a subscribed function in the service
+```ts
+    onMetalClick(index: number) {
+    this.invokeMetalFunction.emit(index);
+  }
+
+  invokeScreenshotFunction = new EventEmitter();
+  subsScreenshot!: Subscription;
+```
+and finally, the receiving component is subscribed to the service and can then trigger a function
+```ts
+if (this.dataService.subsVarStone == undefined) {
+ this.dataService.subsVarStone = this.dataService.invokeStoneFunction.subscribe((indexStone: number) => {
+  this.stone(indexStone)
+ });
+}
+```
+
 ### - Jewel selection
 
 It's the first page of the app. It displays some predifined types of jewel, which can be changed with a swipe and choose the kind of jewel the customer wants. If the customer does nothing, the next jewel type displays automatically every 5 secondes and return to the first one if all types has been displayed.
@@ -213,6 +235,7 @@ roughness: 0.4
         break;
     }
  ```
+
 ### - Form
 
 This part was initially to register the contact details, the request of the customer and send it by email confirmation of purchase but was scrapped.
