@@ -2,7 +2,7 @@
 
 ## Project Name:
 
-**DubaiI Creation
+**DubaiI Creation**
 
 ## Introduction:
 
@@ -49,4 +49,4 @@ If you see "ionic command does not exist" it means that you didn't install ionic
 
 If you see errors inside the code, you may have forgot the "npm i" command.
 
-**All rights reserved©
+**All rights reserved©**
