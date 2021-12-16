@@ -2,7 +2,8 @@
 body{
     margin: auto ;
     font-family: 'Cormorant Infant', serif;
-    height: 100%;
+    height: 100vh;
+    overflow-y: hidden;
     width: 100%;
     background: linear-gradient(lightgrey, rgb(250, 250, 250));
 }
