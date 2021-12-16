@@ -4,7 +4,6 @@ body{
     margin-top: 15%;
     margin: auto;
     background: linear-gradient(lightgrey, rgb(250, 250, 250));
-    text-align: center;
 }
 
 input {
@@ -12,6 +11,8 @@ input {
     border-bottom: solid;
     border-width: 1px;
     background-color: transparent;
+    margin-right: 9%;
+    text-align: left;
 }
 
 input:active {
@@ -23,6 +24,7 @@ textarea {
     border-width: 2px;
     border-radius: 5px;
     background-color: transparent;
+    margin-right: 8%;
 }
 
 .case {
@@ -54,14 +56,25 @@ p {
     0 100px 80px rgba(0, 0, 0, 0.03);
 }
 
+#buttons {
+    display: flex;
+    margin-left: 9%;
+}
+
 #Envoyer {
     background-color: rgb(10, 177, 10);
     box-shadow: 1px 1px 1px 1px #666; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #Recommencer {
     background-color: rgb(218, 21, 21);
     box-shadow: 1px 1px 1px 1px #666; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* background at the top and center the svg of dubail*/
 header{
