@@ -1,10 +1,10 @@
 # GroupA_Dubail_Project
 
-##Project Name:
+## Project Name:
 
 **DubaiI Creation**
 
-##Introduction:
+## Introduction:
 
 The project is an App for Android asked by a French Jewelery [DubaiL](https://www.dubail.fr/fr/joaillerie-dubail). They want to renew the brand with new technologies.
 
