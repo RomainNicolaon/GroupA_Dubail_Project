@@ -1,290 +1,453 @@
 
 a>span{
-    text-shadow: 0px 0px 30px rgb(0, 0, 0),0px 0px 30px rgb(0, 0, 0),0px 0px 30px rgb(0, 0, 0),0px 0px 10px black,0px 0px 10px black;
-    font-size: large;
+  text-shadow: 0px 0px 30px rgb(0, 0, 0),0px 0px 30px rgb(0, 0, 0),0px 0px 30px rgb(0, 0, 0),0px 0px 10px black,0px 0px 10px black;
+  font-size: large;
+}
+h2{
+  text-align: center;
+  font-family: 'Cormorant Infant', serif;
+  text-align: center;
+  margin-top: 10%;
+} 
+button{
+  background: transparent;
+  border: none !important;
+  font-size:0;
+  height: 100%;
+}
+body{
+  padding: auto;
+  margin: auto;   
+  background: linear-gradient(lightgrey, rgb(250, 250, 250));
   }
-  h2{
-    text-align: center;
-    font-family: 'Cormorant Infant', serif;
-    text-align: center;
-    margin-top: 10%;
-  } 
-  button{
-    background: transparent;
-    border: none !important;
-    font-size:0;
-    height: 100%;
-  }
-  body{
-    padding: auto;
-    margin: auto;   
-    background: linear-gradient(lightgrey, rgb(250, 250, 250));
-    }
-    @keyframes tonext {
-      75% {
-        left: 0;
-      }
-      95% {
-        left: 100%;
-      }
-      98% {
-        left: 100%;
-      }
-      99% {
-        left: 0;
-      }
-    }
-    
-    @keyframes tostart {
-      75% {
-        left: 0;
-      }
-      95% {
-        left: -300%;
-      }
-      98% {
-        left: -300%;
-      }
-      99% {
-        left: 0;
-      }
-    }
-    
-    @keyframes snap {
-      96% {
-        scroll-snap-align: center;
-      }
-      97% {
-        scroll-snap-align: none;
-      }
-      99% {
-        scroll-snap-align: none;
-      }
-      100% {
-        scroll-snap-align: center;
-      }
-    }
-    
-    body {
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
-      padding: 0;
-      background:linear-gradient(lightgrey, rgb(250, 250, 250));
-      font-family: 'Cormorant Infant', serif;
-    }
-  
-  
-    a{
-      text-decoration: none;
-      color: white;
-      font-size: 5vh;
-      text-shadow: 3px 0px black;
-      font-weight: bold;
-      text-align: center;
-      align-items: end;
-      display:grid;
-      height: 100%;
-      width: 100%;
-    }
-    .slideFinger{
-      width: 20%;
-      margin-left: 40%;
-      animation: Swipe 2s ease 0s infinite normal forwards;
-    }
-    @keyframes Swipe {
-      0% {
-        transform: translateX(50px);
-      }
-    
-      50% {
-        transform: translateX(-50px);
-      }
-      100%{
-        transform: translateX(50px);
-      }
-    }
-    .placement_carousel{
-      margin-top: 20%;
-    }
-  
-  .containerText{
-    padding-top: 5%;
-  }
-  
-    .history{
-      display: flex;
-      justify-content: center;
-    }
-    
-    * {
-      box-sizing: border-box;
-      scrollbar-color: transparent transparent; /* thumb and track color */
-      scrollbar-width: 0px;
-    }
-    
-    *::-webkit-scrollbar {
-      width: 0;
-    }
-    
-    *::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    
-    *::-webkit-scrollbar-thumb {
-      background: transparent;
-      border: none;
-    }
-    
-    * {
-      -ms-overflow-style: none;
-    }
-    
-    ol, li {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .carousel {
-      position: relative;
-      padding-top: 60%;
-      filter: drop-shadow(0 0 10px #0003);
-      perspective: 100px;
-    }
-    
-    .carousel__viewport {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
+  @keyframes tonext {
+    75% {
       left: 0;
-      display: flex;
-      overflow-x: scroll;
-      counter-reset: item;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
     }
-    
-    .carousel__slide {
-      position: relative;
-      flex: 0 0 100%;
-      width: 100%;
-      counter-increment: item;
+    95% {
+      left: 100%;
     }
-    
-    .carousel__slide:nth-child(1) {
-      background-image: url(../../assets/img/baguee.png);
-      background-position: center ;
-      background-repeat: no-repeat;
-      background-size:contain;
+    98% {
+      left: 100%;
     }
-    .carousel__slide:nth-child(2) {
-      background-image: url(../../assets/img/colliertorse.png);
-      background-position: center ;
-      background-repeat: no-repeat;
-      background-size: contain;
-  
-    }
-    .carousel__slide:nth-child(3) {
-      background-image: url(../../assets/img/braceletpresentoire.png);
-      background-position: center ;
-      background-repeat: no-repeat;
-      background-size: contain;
-  
-    }
-    .carousel__slide:nth-child(4) {
-      background-image: url(../../assets/img/bouclepresentoire.png);
-      background-position: center ;
-      background-repeat: no-repeat;
-      background-size: contain;
-  
-    }
-    
-    .carousel__slide:before {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate3d(-50%,-40%,70px);
-      color: #fff;
-      font-size: 2em;
-    }
-    
-    .carousel__snapper {
-      position: absolute;
-      top: 0;
+    99% {
       left: 0;
-      width: 100%;
-      height: 100%;
+    }
+  }
+  
+  @keyframes tostart {
+    75% {
+      left: 0;
+    }
+    95% {
+      left: -300%;
+    }
+    98% {
+      left: -300%;
+    }
+    99% {
+      left: 0;
+    }
+  }
+  
+  @keyframes snap {
+    96% {
       scroll-snap-align: center;
     }
-  
-    .center{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    97% {
+      scroll-snap-align: none;
     }
-    
-    @media (hover: hover) {
-      .carousel__snapper {
-        animation-name: tonext, snap;
-        animation-timing-function: ease;
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
-      }
-    
-      .carousel__slide:last-child .carousel__snapper {
-        animation-name: tostart, snap;
-      }
+    99% {
+      scroll-snap-align: none;
     }
-    
-    @media (prefers-reduced-motion: reduce) {
-      .carousel__snapper {
-        animation-name: none;
-      }
+    100% {
+      scroll-snap-align: center;
     }
-    
-    .box{
-      left: 45%;
-      position: relative;
-  
   }
   
-  .box span{
-      display: inline-block;
-      width: 4vh;
-      height: 4vh;
-      border-bottom: 3px solid rgb(2, 2, 2);
-      border-right: 3px solid rgb(0, 0, 0);
-      transform: rotate(135deg);
-      margin: -0.2vh;
-      animation: animate 3s infinite;
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background:linear-gradient(lightgrey, rgb(250, 250, 250));
+    font-family: 'Cormorant Infant', serif;
+  }
+
+
+  a{
+    text-decoration: none;
+    color: white;
+    font-size: 5vh;
+    text-shadow: 3px 0px black;
+    font-weight: bold;
+    text-align: center;
+    align-items: end;
+    display:grid;
+    height: 100%;
+    width: 100%;
+  }
+
+  .placement_carousel{
+    margin-top: 20%;
+  }
+
+
+  .history{
+    display: flex;
+    justify-content: center;
   }
   
-  .box span:nth-child(2){
-      animation-delay:-0.2s ;
-  
-  }
-  .box span:nth-child(3){
-      animation-delay:-0.4s ;
-      transform: rotate(135deg);
-  
+  * {
+    box-sizing: border-box;
+    scrollbar-color: transparent transparent; /* thumb and track color */
+    scrollbar-width: 0px;
   }
   
-  
-  
-  
-  @keyframes animate{
-      0%{
-          opacity: 0;
-          transform: rotate(135deg) translate(-10px,-10px);
-      }
-      50%{
-          opacity: 1;
-      }
-      100%{
-          opacity: 0;
-          transform: rotate(135deg) translate(10px,10px);
-      }
+  *::-webkit-scrollbar {
+    width: 0;
   }
-   
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+  }
+  
+  * {
+    -ms-overflow-style: none;
+  }
+  
+  ol, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .carousel {
+    position: relative;
+    padding-top: 60%;
+    filter: drop-shadow(0 0 10px #0003);
+    perspective: 100px;
+  }
+  
+  .carousel__viewport {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    counter-reset: item;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .carousel__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    counter-increment: item;
+  }
+  
+  .carousel__slide:nth-child(1) {
+    background-image: url(../../assets/img/baguee.png);
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+  .carousel__slide:nth-child(2) {
+    background-image: url(../../assets/img/colliertorse.png);
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+  }
+  .carousel__slide:nth-child(3) {
+    background-image: url(../../assets/img/braceletpresentoire.png);
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+  }
+  .carousel__slide:nth-child(4) {
+    background-image: url(../../assets/img/bouclepresentoire.png);
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+  }
+  
+  .carousel__slide:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-40%,70px);
+    color: #fff;
+    font-size: 2em;
+  }
+  
+  .carousel__snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+  }
+
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (hover: hover) {
+    .carousel__snapper {
+      animation-name: tonext, snap;
+      animation-timing-function: ease;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+    }
+  
+    .carousel__slide:last-child .carousel__snapper {
+      animation-name: tostart, snap;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .carousel__snapper {
+      animation-name: none;
+    }
+  }
+  
+  .box{
+    left: 45%;
+    position: relative;
+
+}
+
+.box span{
+    display: inline-block;
+    width: 4vh;
+    height: 4vh;
+    border-bottom: 3px solid rgb(2, 2, 2);
+    border-right: 3px solid rgb(0, 0, 0);
+    transform: rotate(135deg);
+    margin: -0.2vh;
+    animation: animate 3s infinite;
+}
+
+.box span:nth-child(2){
+    animation-delay:-0.2s ;
+
+}
+.box span:nth-child(3){
+    animation-delay:-0.4s ;
+    transform: rotate(135deg);
+
+}
+
+
+
+
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: rotate(135deg) translate(-10px,-10px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(135deg) translate(10px,10px);
+    }
+}
+svg {
+	display: inline-block;
+	width: 70px;
+	margin: 3% auto;
+  margin-left: 20%;
+}
+
+/* SVG RULES */
+
+.hand, 
+.hand-double, 
+.hand-flick, 
+.hand-hold, 
+.hand-rock, 
+.hand-tap, 
+.hand-x, 
+.hand-y {
+	fill: #fff;
+	stroke: #000;
+	stroke-width: 3px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.arrow-down, 
+.arrow-head, 
+.arrow-left, 
+.arrow-right, 
+.arrow-up, 
+.arrow-up-1, 
+.arrow-up-2, 
+.arrow-up-3,   
+.hold-1,
+.hold-2, 
+.line-horizontal, 
+.line-rotate, 
+.line-vertical, 
+.notes, 
+.tap-1, 
+.tap-2 {
+	fill: transparent;
+	stroke: #000;
+	stroke-width: 3px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.arrow-up-2, 
+.hold-1, 
+.tap-1 {
+	opacity: .5;
+}
+
+.arrow-up-1, 
+.hold-2, 
+.tap-2 {
+	opacity: .25;
+}
+
+.arrow-up-3, 
+.swipe-horizontal, 
+.swipe-rotate, 
+.swipe-vertical {
+	opacity: .75;
+}
+
+.hold-1, 
+.hold-2, 
+.notes {
+	opacity: 0;
+}
+
+/* ANIMATION KEYFRAMES */
+
+
+
+@keyframes tap {
+	0% {
+		transform: rotateX(0deg);
+	}
+	10% {
+		transform: rotateX(12.5deg);
+	}
+	25% {
+		transform: rotateX(25deg);
+	}
+}
+
+@keyframes tap-circle {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	75% {
+		transform: scale(1.05);
+		opacity: .6;
+	}
+	80% {
+		transform: scale(1);
+		opacity: .5;
+	}
+}
+
+@keyframes swipe-x {
+	0% {
+		transform: translateX(0px);
+	}
+	25% {
+		transform: translateX(50px) rotateZ(10deg);
+	}
+	50% {
+		transform: translateX(0px);
+	}
+	75% {
+		transform: translateX(-50px) rotateZ(-10deg);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* SVG ANIMATION */
+
+.wrapper * {
+	transform-origin: 50% 50%;
+	perspective: 100px;
+  
+}
+
+.hand {
+	transform-origin: 25% 50%;
+}
+
+.hand-tap {
+	animation: tap 1.25s ease-out backwards;
+	animation-iteration-count:infinite;
+}
+
+.hand-double {
+	animation: tap-double 1.25s ease-out backwards;
+	animation-iteration-count:infinite;
+}
+
+.tap-1,
+.tap-2 {
+	animation: tap-circle 1.25s ease-out backwards;
+	animation-iteration-count:infinite;
+}
+
+.hand-hold {
+	animation: hold 1.25s ease-out backwards;
+	animation-iteration-count:infinite;
+}
+
+.hold-1, .hold-2 {
+	animation: fade 1.25s ease-in backwards;
+	animation-iteration-count:infinite;
+}
+
+.tap-2 {
+	animation-delay: 0.2s;
+}
+
+.hand-x {
+	animation: swipe-x 1.25s ease-in-out backwards;
+	animation-iteration-count:infinite;
+}
+
+.hand-y {
+	animation: swipe-y 1.25s ease-in-out backwards;
+	animation-iteration-count:infinite;
+}
+ 
+.hand-flick {
+	animation: flick 1.25s ease-out backwards;
+	animation-iteration-count:infinite;
+}

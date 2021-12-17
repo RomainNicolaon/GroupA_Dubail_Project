@@ -42,4 +42,13 @@ export class DataService {
   reload$(){ //need to reload the page otherwise canvas bug
     setTimeout(() => {window.location.reload()},2)
   }
+
+
+  invokeNoVisFunction = new EventEmitter();
+  subsNoVis!: Subscription;
+
+  onNoVisClick() {
+    this.invokeNoVisFunction.emit();
+  }
+
 }
