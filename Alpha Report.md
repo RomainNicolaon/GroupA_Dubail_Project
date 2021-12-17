@@ -305,6 +305,7 @@ Ionic
 
 Some improvements are possible, especially on optimisation where some efforts are made on making ergonomic features and an attractive interface.
 On the app itself, we have the layout for the customer's choice of the number of gem on their jewel and for the Engravement feature. Unfortunately, we weren't able to make functioning features for the end result.
+A connection to the Google Play account of the customers would have also been a good feature to implement.
 
 # 8. Conclusion
 
