@@ -88,6 +88,12 @@ export class BraceletComponent implements OnInit {
   }
 
   ngOnInit() { /**/
+    if (this.dataService.subsNoVis == undefined) {
+      this.dataService.subsNoVis = this.dataService.
+        invokeNoVisFunction.subscribe(() => {
+          document.getElementById('canvas').style.display = "none"
+        });
+    }
     if (this.dataService.subsVarStone == undefined) {
       this.dataService.subsVarStone = this.dataService.
         invokeStoneFunction.subscribe((indexStone: number) => {
