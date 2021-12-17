@@ -12,18 +12,19 @@ Group A Project Report
  
  - Technologies' Badges
 1. [`Introduction`](#1-introduction)
-2. [`Techonologies Used`](#2-technologies-used)
-3. [`GitHub`](#3-github)
-4. [`Angular App`](#4-angular-app)
+2. [`Management`](#2-management)
+3. [`Techonologies Used`](#3-technologies-used)
+4. [`GitHub`](#4-github)
+5. [`Angular App`](#5-angular-app)
 - Jewel selection
 - Jewel display
 - Material choice
 - Form
-5. [`Web to App`](#5-web-to-app)
+6. [`Web to App`](#6-web-to-app)
  - Ionic
  - Gradle
-6. [`Improvement`](#6-improvement)
-7. [`Conclusion`](#7-conclusion)
+7. [`Improvement`](#7-improvement)
+8. [`Conclusion`](#8-conclusion)
 </details>
 
 ---
