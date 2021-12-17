@@ -94,6 +94,7 @@ export class BraceletComponent implements OnInit {
           document.getElementById('canvas').style.display = "none"
         });
     }
+    
     if (this.dataService.subsVarStone == undefined) {
       this.dataService.subsVarStone = this.dataService.
         invokeStoneFunction.subscribe((indexStone: number) => {
