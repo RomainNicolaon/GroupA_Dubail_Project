@@ -18,7 +18,6 @@ export class BijouxComponent implements OnInit {
   }
 
   emptyCache(){
-    this.dataService.onNoVisClick()
     this.dataService.reload$()
   }
 }

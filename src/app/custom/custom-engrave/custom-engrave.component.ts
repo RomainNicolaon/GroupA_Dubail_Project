@@ -10,7 +10,15 @@ export class CustomEngraveComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    var slider = document.getElementById("myRange") as HTMLInputElement;
+    var output = document.getElementById("demo") as  HTMLSpanElement;
+    output!.innerHTML = slider!.value;
+
+    slider!.oninput = function() {  
+    output!.innerHTML = slider.value;
+    }
+  }
 
   confirm(){
     this.dataService.onScreenshotClick()
