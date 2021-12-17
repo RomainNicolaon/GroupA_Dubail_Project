@@ -1,6 +1,10 @@
 #canvas{
-    height: 45%;
+    height: 500px;
     width: 100%;
+}
+
+div{
+    height: 500px;
 }
 .img360{
     width: 10%;
@@ -10,4 +14,34 @@
     width: 15%;
     position: absolute;
     right: 0%;
+}
+
+@media (max-height:885px) and (min-height:780px) {
+    #div{
+        height: 400px;
+    }
+    #canvas{
+        height: 400px;
+        width: 100%;
+    }
+}
+
+@media (max-height:780px) and (min-height:321px) {
+    #div{
+        height: 350px;
+    }
+    #canvas{
+        height: 350px;
+        width: 100%;
+    }
+}
+
+@media (max-height:330px) and (min-height:280px) {
+    #div{
+        height: 300px;
+    }
+    #canvas{
+        height: 300px;
+        width: 100%;
+    }
 }

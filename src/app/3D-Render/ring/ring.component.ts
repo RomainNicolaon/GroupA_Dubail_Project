@@ -55,7 +55,7 @@ export class RingComponent implements OnInit {
   }
 
   private getAspectRatio() {
-    return this.canvas.clientWidth / this.canvas.clientHeight
+    return this.canvas.clientWidth / this.canvas.clientHeight;
   }
 
   private startRenderingLoop() {

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">DubaiI</string>
-    <string name="title_activity_main">DubaiI</string>
+    <string name="app_name">Dubaii</string>
+    <string name="title_activity_main">Dubaii</string>
     <string name="package_name">com.dubaii.com</string>
     <string name="custom_url_scheme">com.dubaii.com</string>
 </resources>
