@@ -286,19 +286,29 @@ A feature was added to complete the app: a donwload button if the customer wants
 
 # 6. Web to App
 
-Gradle
+#### - Gradle
+
+Thanks to Gradle we were able to automate the build of our project in Android Studio.
 
 
-Android Studio
+#### - Android Studio
+
+Thanks to the Android Studio emulator, we were able to emulate our application and create it as an app bundle. It allowed us to test our code with a variety of device configurations such as Smartphone, Tablet, Wearables, and Android TV Devices. Many other interesting features can be simulated, such as GPS location, motion sensors, network latency, and multi-touch input. This is an effective way if you want to create an application.
 
 
-First Angular
+#### - First Angular
+
+Angular allowed us to create an application with interactive and dynamic pages with the programming languages JavScript and TypeScript.
 
 
-Capacitor
+#### - Capacitor
+
+A key component of the Ionic platform, Capacitor has allowed us to create quality applications for all platforms, while greatly reducing the likelihood that they will get stuck on native-specific issues.
 
 
-Ionic
+#### - Ionic
+
+With Ionic, we were able to create a cross-platform application without any problems. It is much easier to create high-end user interfaces with additional features and to reuse the same code to create applications for different platforms. However, rewriting our Angular project in Ionic was necessary due to problems with Gradle.
 
 
 # 7. Improvement
